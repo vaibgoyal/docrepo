@@ -1,0 +1,711 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Combination Chart SQL Scripts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="">
+<meta name="description" content="">
+
+
+
+
+<script type="text/javascript"  >
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-3163490-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<link rel="stylesheet" type="text/css" href="http://www.aquafold.com/style/bootstrap/css/bootstrap.css">
+
+
+</head>
+
+
+<body>
+
+<!--Start Header-->
+
+
+
+
+  <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-fixed-top">
+
+      <div class="navbar-inner">
+        <div class="container">
+
+    <a class="brand" href="http://www.aquafold.com" >
+	    <img src="http://www.aquafold.com/images/aquafold_logo_blue_bubbles.png" />
+    </a>
+          <div class="nav-collapse" >
+            <ul class="nav">
+              <li class="">
+                <a href="http://www.aquafold.com/aquadatastudio.html">Aqua Data Studio</a>
+              </li>
+              <li class="">
+                <a href="http://www.aquafold.com/aquadataserver.html">Aqua Data Server</a>
+              </li>
+
+              <li class="">
+                <a href="http://www.aquafold.com/aquaclusters.html">AquaClusters</a>
+              </li>
+</ul>
+<ul class="nav pull-right">
+              <li>
+                <a href="http://www.aquafold.com/support.html">Support</a>
+              </li>
+              <li>
+                <a href="http://www.aquafold.com/store.html">Buy</a>
+
+              </li>
+              <li>
+                <a href="http://www.aquafold.com/company.html" class="company">Company</a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+<!-- END top navigation Dec 2007 -->
+
+
+<div style="padding-top:30px;">
+<iframe src="header.html" frameborder="0" scrolling="no" height=
+"70px" width="100%">
+<h1>Combination Chart SQL Scripts</h1>
+</iframe><br>
+<table border="0" width="100%" summary="Table of Contents">
+<tr>
+<td width="20%" valign="top" bgcolor="white" style=
+"padding-top: 5px;">
+<div style="width:316px;"><div class="nowrap" style="padding-left: 5px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="0.html" title="Chart Example Screenshots">Chart Example
+Screenshots</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 5px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Area-Charts.html" title="Area Charts">Area Charts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 15px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Area-Chart-SQL-Scripts.html" title=
+"Area Chart SQL Scripts">Area Chart SQL Scripts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Area-Chart-SQL-Script.html" title=
+"3D Area Chart SQL Script">3D Area Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Stacked-Area-Chart-SQL-Script.html" title=
+"3D Stacked Area Chart SQL Script">3D Stacked Area Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-100-Stacked-Area-Chart-SQL-Script.html" title=
+"3D 100% Stacked Area Chart SQL Script">3D 100% Stacked Area Chart
+SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Area-Zero-Axis-Chart-SQL-Script.html" title=
+"3D Area Zero Axis Chart SQL Script">3D Area Zero Axis Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Area-Chart-SQL-Script.html" title=
+"2D Area Chart SQL Script">2D Area Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Stacked-Area-Chart-SQL-Script.html" title=
+"2D Stacked Area Chart SQL Script">2D Stacked Area Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-100-Stacked-Area-Chart-SQL-Script.html" title=
+"2D 100% Stacked Area Chart SQL Script">2D 100% Stacked Area Chart
+SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Area-Zero-Axis-Chart-SQL-Script.html" title=
+"2D Area Zero Axis Chart SQL Script">2D Area Zero Axis Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 5px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Bar-Charts.html" title="Bar Charts">Bar Charts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 15px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Bar-Chart-SQL-Scripts.html" title=
+"Bar Chart SQL Scripts">Bar Chart SQL Scripts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Column-Cluster-Chart-SQL-Script.html" title=
+"3D Column Cluster Chart SQL Script">3D Column Cluster Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Bar-Horizontal-Chart-SQL-Script.html" title=
+"3D Bar Horizontal Chart SQL Script">3D Bar Horizontal Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Bar-Horizontal-Zero-Axis-Chart-SQL-Script.html" title=
+"3D Bar Horizontal Zero Axis Chart SQL Script">3D Bar Horizontal
+Zero Axis Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Oblique-Bar-Chart-SQL-Script.html" title=
+"3D Oblique Bar Chart SQL Script">3D Oblique Bar Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Pyramid-Chart-SQL-Script.html" title=
+"3D Pyramid Chart SQL Script">3D Pyramid Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Stacked-Column-Chart-SQL-Script.html" title=
+"3D Stacked Column Chart SQL Script">3D Stacked Column Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Thin-Column-Chart-SQL-Script.html" title=
+"3D Thin Column Chart SQL Script">3D Thin Column Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Cone-Chart-SQL-Script.html" title=
+"3D Cone Chart SQL Script">3D Cone Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Cylinder-Chart-SQL-Script.html" title=
+"3D Cylinder Chart SQL Script">3D Cylinder Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Negative-Column-Chart-SQL-Script.html" title=
+"3D Negative Column Chart SQL Script">3D Negative Column Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Cylinder-Chart-SQL-Script.html" title=
+"2D Cylinder Chart SQL Script ">2D Cylinder Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Negative-Column-Chart-SQL-Script.html" title=
+"2D Negative Column Chart SQL Script">2D Negative Column Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Bar-Horizontal-Chart-SQL-Script.html" title=
+"2D Bar Horizontal Chart SQL Script">2D Bar Horizontal Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Bar-Horizontal-Zero-Axis-Chart-SQL-Script.html" title=
+"2D Bar Horizontal Zero Axis Chart SQL Script">2D Bar Horizontal
+Zero Axis Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Column-Cluster-Chart-SQL-Script.html" title=
+"2D Column Cluster Chart SQL Script">2D Column Cluster Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Stacked-Column-Chart-SQL-Script.html" title=
+"2D Stacked Column Chart SQL Script">2D Stacked Column Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 5px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Bubble-Charts.html" title="Bubble Charts">Bubble
+Charts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 15px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Bubble-Chart-SQL-Scripts.html" title=
+"Bubble Chart SQL Scripts">Bubble Chart SQL Scripts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Bubble-Chart-SQL-Script.html" title=
+"3D Bubble Chart SQL Script">3D Bubble Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Bubble-Chart-SQL-Script.html" title=
+"2D Bubble Chart SQL Script">2D Bubble Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 5px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Combination-Charts.html" title=
+"Combination Charts">Combination Charts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 15px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Combination-Chart-SQL-Scripts.html" title=
+"Combination Chart SQL Scripts">Combination Chart SQL
+Scripts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Bar-Area-Combination-Chart-SQL-Script.html" title=
+"3D Bar-Area Combination Chart SQL Script">3D Bar-Area Combination
+Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Bar-Line-Combination-Chart-SQL-Script.html" title=
+"3D Bar-Line Combination Chart SQL Script">3D Bar-Line Combination
+Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Bar-Area-Combination-Chart-SQL-Script.html" title=
+"2D Bar-Area Combination Chart SQL Script">2D Bar-Area Combination
+Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Bar-Line-Combination-Chart-SQL-Script.html" title=
+"2D Bar-Line Combination Chart SQL Script">2D Bar-Line Combination
+Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 5px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Financial-Charts.html" title="Financial Charts">Financial
+Charts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 15px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Financial-Chart-SQL-Scripts.html" title=
+"Financial Chart SQL Scripts">Financial Chart SQL Scripts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-High-Low-Close-Chart-SQL-Script.html" title=
+"3D High Low Close Chart SQL Script">3D High Low Close Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Candlestick-Chart-SQL-Script.html" title=
+"3D Candlestick Chart SQL Script">3D Candlestick Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-High-Low-Close-Chart-SQL-Script.html" title=
+"2D High Low Close Chart SQL Script">2D High Low Close Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Candlestick-Chart-SQL-Script.html" title=
+"2D Candlestick Chart SQL Script">2D Candlestick Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 5px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Line-Charts.html" title="Line Charts">Line Charts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 15px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Line-Chart-SQL-Scripts.html" title=
+"Line Chart SQL Scripts">Line Chart SQL Scripts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Multiple-Series-Line-Chart-SQL-Script.html" title=
+"3D Multiple Series Line Chart SQL Script">3D Multiple Series Line
+Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Stacked-Line-Chart-SQL-Script.html" title=
+"3D Stacked Line Chart SQL Script">3D Stacked Line Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-XY-Line-Zero-Axis-Chart-SQL-Script.html" title=
+"3D XY Line Zero Axis Chart SQL Script">3D XY Line Zero Axis Chart
+SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Multiple-Series-Line-Chart-SQL-Script.html" title=
+"2D Multiple Series Line Chart SQL Script">2D Multiple Series Line
+Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Stacked-Line-Chart-SQL-Script.html" title=
+"2D Stacked Line Chart SQL Script">2D Stacked Line Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-XY-Line-Zero-Axis-Chart-SQL-Script.html" title=
+"2D XY Line Zero Axis Chart SQL Script">2D XY Line Zero Axis Chart
+SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 5px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Pie-Charts.html" title="Pie Charts">Pie Charts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 15px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Pie-Chart-SQL-Scripts.html" title=
+"Pie Chart SQL Scripts">Pie Chart SQL Scripts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Pie-Chart-SQL-Script.html" title=
+"3D Pie Chart SQL Script">3D Pie Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Exploding-Pie-Chart-SQL-Script.html" title=
+"3D Exploding Pie Chart SQL Script">3D Exploding Pie Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Multiple-Series-Pie-Chart-SQL-Script.html" title=
+"3D Multiple Series Pie Chart SQL Script">3D Multiple Series Pie
+Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Pie-Chart-SQL-Script.html" title=
+"2D Pie Chart SQL Script">2D Pie Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Exploding-Pie-Chart-SQL-Script.html" title=
+"2D Exploding Pie Chart SQL Script">2D Exploding Pie Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Multiple-Series-Pie-Chart-SQL-Script.html" title=
+"2D Multiple Series Pie Chart SQL Script">2D Multiple Series Pie
+Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 5px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Scatter-Charts.html" title="Scatter Charts">Scatter
+Charts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 15px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Scatter-Chart-SQL-Scripts.html" title=
+"Scatter Chart SQL Scripts">Scatter Chart SQL Scripts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Scatter-Chart-SQL-Script.html" title=
+"3D Scatter Chart SQL Script">3D Scatter Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Linear-Regression-Chart-SQL-Script.html" title=
+"3D Linear Regression Chart SQL Script">3D Linear Regression Chart
+SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Zero-Crossing-Chart-SQL-Script.html" title=
+"3D Zero Crossing Chart SQL Script">3D Zero Crossing Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Scatter-Chart-SQL-Script.html" title=
+"2D Scatter Chart SQL Script">2D Scatter Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Linear-Regression-Chart-SQL-Script.html" title=
+"2D Linear Regression Chart SQL Script">2D Linear Regression Chart
+SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Zero-Crossing-Chart-SQL-Script.html" title=
+"2D Zero Crossing Chart SQL Script">2D Zero Crossing Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 5px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Surface-Charts.html" title="Surface Charts">Surface
+Charts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 15px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Surface-Chart-SQL-Scripts.html" title=
+"Surface Chart SQL Scripts">Surface Chart SQL Scripts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Surface-Chart-SQL-Script.html" title=
+"3D Surface Chart SQL Script">3D Surface Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Surface-Chart-SQL-Script.html" title=
+"2D Surface Chart SQL Script">2D Surface Chart SQL Script</a><br>
+</div>
+
+</div>
+</td>
+<td width="80%" valign="top" style=
+"vertical-align:top; margin:0; padding-left:10px;padding-right:7px;">
+<div class="wiki-header">
+<h1 style="margin-top:0; margin-bottom:7px">Combination Chart SQL
+Scripts</h1>
+</div>
+
+<div class="page-source user-content">
+<p>&nbsp;</p>
+
+<div><a href="3D-Bar-Area-Combination-Chart-SQL-Script.html"><span
+style="font-size: 12.0px;line-height: normal;">3D Bar-Area
+Combination Chart SQL Script</span></a></div>
+
+<div>&nbsp;</div>
+
+<div><a href="3D-Bar-Line-Combination-Chart-SQL-Script.html"><span
+style="font-size: 12.0px;line-height: normal;">3D Bar-Line
+Combination Chart SQL Script</span></a></div>
+
+<div>&nbsp;</div>
+
+<div><a href="2D-Bar-Area-Combination-Chart-SQL-Script.html"><span
+style="font-size: 12.0px;line-height: normal;">2D Bar-Area
+Combination Chart SQL Script</span></a></div>
+
+<div>&nbsp;</div>
+
+<div><a href="2D-Bar-Line-Combination-Chart-SQL-Script.html"><span
+style="font-size: 12.0px;line-height: normal;">2D Bar-Line
+Combination Chart SQL Script</span></a></div>
+</div>
+</td>
+</tr>
+</table>
+
+
+
+<iframe src="footer.html" frameborder="0" scrolling="no" height=
+"100px" width="100%">ddd</iframe>
+
+<!--End Footer-->
+
+
+
+
+</div>
+</body>
+</html>
+

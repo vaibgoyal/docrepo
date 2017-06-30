@@ -1,0 +1,840 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+
+
+<title>3D 100% Stacked Area Chart SQL Script</title>
+<meta http-equiv="REFRESH" content="0;url=index.html"></HEAD>
+<BODY>
+</BODY>
+</HTML>
+
+
+\
+"text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="content.css">
+<style type="text/css">
+table#documentation img{margin:0;border:0;}
+body {
+	margin-left: auto;
+	margin-top: 0px;
+	margin-right: auto;
+	width:1000px;
+	background:#D6D6D6 url('http://dd1.aquafold.com/images/body_background.png') center top repeat-y;
+}
+</style>
+
+
+
+<script type="text/javascript"  >
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-3163490-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+
+<body bgcolor="white">
+<iframe src="header-new-charts-may-2011.html" frameborder="0" scrolling="no" height=
+"88px" width="100%" style="margin-top:4px;margin-bottom:10px;"><h1>3D 100% Stacked Area Chart SQL Script</h1>
+</iframe><br>
+<div style="padding:0;">
+<table border="0" width="100%" summary="Table of Contents">
+<tr>
+<td width="20%" valign="top" bgcolor="#EEEFFF" style="padding:4px;"><b><a href=
+"index.html">Chart Gallery - Aqua Data Studio </a></b><br>
+<img style="margin:0;" src="images/section-indicator.gif"><a href=
+"474330DD-5E78-2F50-DC58-05F012B20D72.html" title=
+"Chart Example Screenshots" style="font-size:10px;">Chart Example
+Screenshots</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"4DDE5266-B9D7-6796-4FF5-66A839A2F1E5.html" title="Area Charts"
+style="font-size:10px;">Area Charts</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"0DAD8D4C-5420-0144-E623-BE2E28DB6F09.html" title="Bar Charts"
+style="font-size:10px;">Bar Charts</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"D26C390B-D993-8646-97BC-B3FC1AB8C113.html" title="Bubble Charts"
+style="font-size:10px;">Bubble Charts</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"95BCADF5-6F57-CF38-FBCA-31F841FD74EA.html" title=
+"Combination Charts" style="font-size:10px;">Combination
+Charts</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"48F47FB9-79EB-E7BA-861A-E0CD11774FBA.html" title=
+"Financial Charts" style="font-size:10px;">Financial Charts</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"1C2F4B4B-95D8-FB17-9184-2ABAE609D49F.html" title="Line Charts"
+style="font-size:10px;">Line Charts</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"7E7714E6-6D88-0C15-4DBB-F526E0767057.html" title="Pie Charts"
+style="font-size:10px;">Pie Charts</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"472173D5-2D89-7480-CC01-011775D9F95D.html" title="Scatter Charts"
+style="font-size:10px;">Scatter Charts</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"F58544F3-CF29-12B6-E16D-31D8080D8C2E.html" title="Surface Charts"
+style="font-size:10px;">Surface Charts</a><br>
+<img style="margin:0;" src="images/section-indicator.gif"><a href=
+"A97B40F6-EA84-5E2D-7ED9-CBF04B299340.html" title=
+"Area Chart SQL Scripts" style="font-size:10px;">Area Chart SQL
+Scripts</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"91820697-3958-1ACE-5ABE-7EC0D84A9E15.html" title=
+"3D Area Chart SQL Script" style="font-size:10px;">3D Area Chart
+SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"1D1E9846-A029-E641-29A2-4247B82EB56E.html" title=
+"3D Stacked Area Chart SQL Script" style="font-size:10px;">3D
+Stacked Area Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"516B8852-0FC2-8753-5008-522C040A4F37.html" title=
+"3D 100% Stacked Area Chart SQL Script" style="font-size:10px;">3D
+100% Stacked Area Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"7807EF0B-8B8E-3E73-2FBC-23146C9AC993.html" title=
+"3D Area Zero Axis Chart SQL Script" style="font-size:10px;">3D
+Area Zero Axis Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"8AD191F5-DE4D-ABF1-7C4C-021C930B1AD8.html" title=
+"2D Area Chart SQL Script" style="font-size:10px;">2D Area Chart
+SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"2C335097-D946-B3E9-DF1F-79F5D23C62C8.html" title=
+"2D Stacked Area Chart SQL Script" style="font-size:10px;">2D
+Stacked Area Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"14508FFF-3E2A-2336-5EEC-A403CFACF437.html" title=
+"2D 100% Stacked Area Chart SQL Script" style="font-size:10px;">2D
+100% Stacked Area Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"8B40D0D8-E6F8-EF80-F2D7-09BECF1E0FB2.html" title=
+"2D Area Zero Axis Chart SQL Script" style="font-size:10px;">2D
+Area Zero Axis Chart SQL Script</a><br>
+<img style="margin:0;" src="images/section-indicator.gif"><a href=
+"0FD5E68C-E941-4911-CC17-CDF1B528C4CF.html" title=
+"Bar Chart SQL Scripts" style="font-size:10px;">Bar Chart SQL
+Scripts</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"C32A927F-D117-319A-88B7-C8750E0908AA.html" title=
+"3D Column Cluster Chart SQL Script" style="font-size:10px;">3D
+Column Cluster Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"F6EE3BF6-18DE-8A98-8DEA-167CC7D9F3BF.html" title=
+"3D Bar Horizontal Chart SQL Script" style="font-size:10px;">3D Bar
+Horizontal Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"A0B5AD19-18BB-203D-B81E-2DD447314F1C.html" title=
+"3D Bar Horizontal Zero Axis Chart SQL Script" style=
+"font-size:10px;">3D Bar Horizontal Zero Axis Chart SQL
+Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"6E4E2890-BD59-4788-F3A8-A6642ADCCEFE.html" title=
+"3D Oblique Bar Chart SQL Script" style="font-size:10px;">3D
+Oblique Bar Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"1E83A8E1-61F3-27A2-0766-EBC05EDDA372.html" title=
+"3D Pyramid Chart SQL Script" style="font-size:10px;">3D Pyramid
+Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"10725F65-CBB2-417A-5420-12792B63E40B.html" title=
+"3D Stacked Column Chart SQL Script" style="font-size:10px;">3D
+Stacked Column Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"CEB9CEEC-FAF0-30FA-01A0-191A1F2616BD.html" title=
+"3D Thin Column Chart SQL Script" style="font-size:10px;">3D Thin
+Column Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"FF82326D-64B2-BDFB-AFB6-0AD53970B6CD.html" title=
+"3D Cone Chart SQL Script" style="font-size:10px;">3D Cone Chart
+SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"FC17F9B4-94A8-0DB5-14E1-48EEFAF9A9BC.html" title=
+"3D Cylinder Chart SQL Script" style="font-size:10px;">3D Cylinder
+Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"D243E800-F9DF-9E89-1B09-40CC009B7978.html" title=
+"3D Negative Column Chart SQL Script" style="font-size:10px;">3D
+Negative Column Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"B2671311-758C-4699-2E26-A482691A8D11.html" title=
+"2D Cylinder Chart SQL Script" style="font-size:10px;">2D Cylinder
+Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"417BF5A8-99A7-BB41-18C1-C53BCC8BD8C3.html" title=
+"2D Negative Column Chart SQL Script" style="font-size:10px;">2D
+Negative Column Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"DE6B1DCE-95DF-9E0B-13DF-4D80F7BE853B.html" title=
+"2D Bar Horizontal Chart SQL Script" style="font-size:10px;">2D Bar
+Horizontal Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"846932BB-376F-5D37-C93F-8FC28FDE919E.html" title=
+"2D Bar Horizontal Zero Axis Chart SQL Script" style=
+"font-size:10px;">2D Bar Horizontal Zero Axis Chart SQL
+Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"00112A4F-8305-15D1-A2BE-E7CC2C000668.html" title=
+"2D Column Cluster Chart SQL Script" style="font-size:10px;">2D
+Column Cluster Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"6B0F6A60-7A63-B5B9-BD16-F01705463CA1.html" title=
+"2D Stacked Column Chart SQL Script" style="font-size:10px;">2D
+Stacked Column Chart SQL Script</a><br>
+<img style="margin:0;" src="images/section-indicator.gif"><a href=
+"052592F3-FED4-184D-35BD-0DD0052DA55D.html" title=
+"Bubble Chart SQL Scripts" style="font-size:10px;">Bubble Chart SQL
+Scripts</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"682CE65F-D88D-E0D5-F008-B38391FFE605.html" title=
+"3D Bubble Chart SQL Script" style="font-size:10px;">3D Bubble
+Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"B2B51B53-8C97-41F8-BDFE-19C197D23F2C.html" title=
+"2D Bubble Chart SQL Script" style="font-size:10px;">2D Bubble
+Chart SQL Script</a><br>
+<img style="margin:0;" src="images/section-indicator.gif"><a href=
+"57EE865A-0BA1-0BA0-D305-9B3FDCE9346F.html" title=
+"Combination Chart SQL Scripts" style="font-size:10px;">Combination
+Chart SQL Scripts</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"0FA50462-37A4-3E38-14C6-7AE24B39A78D.html" title=
+"3D Bar-Area Combination Chart SQL Script" style=
+"font-size:10px;">3D Bar-Area Combination Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"C1D2C53D-6291-8C5A-D57D-1DF769D48EFD.html" title=
+"3D Bar-Line Combination Chart SQL Script" style=
+"font-size:10px;">3D Bar-Line Combination Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"CA0C13F7-C711-F84C-5EBD-6A1121CC9CF4.html" title=
+"2D Bar-Area Combination Chart SQL Script" style=
+"font-size:10px;">2D Bar-Area Combination Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"4BA447C6-AC08-AA55-905A-2CA1B9E7A91C.html" title=
+"2D Bar-Line Combination Chart SQL Script" style=
+"font-size:10px;">2D Bar-Line Combination Chart SQL Script</a><br>
+<img style="margin:0;" src="images/section-indicator.gif"><a href=
+"D983429A-DBC4-B120-5B6F-AD68FB8D4D11.html" title=
+"Financial Chart SQL Scripts" style="font-size:10px;">Financial
+Chart SQL Scripts</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"5ADA20D0-D40E-2A18-55E4-C222C0204CF8.html" title=
+"3D High Low Close Chart SQL Script" style="font-size:10px;">3D
+High Low Close Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"C696BA78-793D-2928-A1BA-91D79160E8E9.html" title=
+"3D Candlestick Chart SQL Script" style="font-size:10px;">3D
+Candlestick Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"BBC4154A-14B4-E277-8A52-75DB2DEB01C9.html" title=
+"2D High Low Close Chart SQL Script" style="font-size:10px;">2D
+High Low Close Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"EBF23D2C-CDDC-EFD8-1AD4-96D2106FB448.html" title=
+"2D Candlestick Chart SQL Script" style="font-size:10px;">2D
+Candlestick Chart SQL Script</a><br>
+<img style="margin:0;" src="images/section-indicator.gif"><a href=
+"DF08BF4C-A98E-A79C-C20D-6723AD751F62.html" title=
+"Line Chart SQL Scripts" style="font-size:10px;">Line Chart SQL
+Scripts</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"5ECA2A3C-F81A-F128-B6B0-A03C8890C6E7.html" title=
+"3D Multiple Series Line Chart SQL Script" style=
+"font-size:10px;">3D Multiple Series Line Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"1B23138A-8D32-AA7A-9ECA-DED2CE9C8CF5.html" title=
+"3D Stacked Line Chart SQL Script" style="font-size:10px;">3D
+Stacked Line Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"4845091D-62BF-D6A4-5C05-D00F8D25CB0F.html" title=
+"3D XY Line Zero Axis Chart SQL Script" style="font-size:10px;">3D
+XY Line Zero Axis Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"1DDEE703-EB85-2482-4EE5-2977AC84741A.html" title=
+"2D Multiple Series Line Chart SQL Script" style=
+"font-size:10px;">2D Multiple Series Line Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"59369A3A-3148-042B-953A-2041E4D584E3.html" title=
+"2D Stacked Line Chart SQL Script" style="font-size:10px;">2D
+Stacked Line Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"75212EFB-ACD8-8283-D54F-0F13B71B8718.html" title=
+"2D XY Line Zero Axis Chart SQL Script" style="font-size:10px;">2D
+XY Line Zero Axis Chart SQL Script</a><br>
+<img style="margin:0;" src="images/section-indicator.gif"><a href=
+"01C9B0EB-20B0-A607-0417-FA426BAE9D4C.html" title=
+"Pie Chart SQL Scripts" style="font-size:10px;">Pie Chart SQL
+Scripts</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"3464F0F2-33F2-C1CA-4796-B89E1BD0CD90.html" title=
+"3D Pie Chart SQL Script" style="font-size:10px;">3D Pie Chart SQL
+Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"A55D10B7-93FF-BF6C-C661-8C7D208FC2BD.html" title=
+"3D Exploding Pie Chart SQL Script" style="font-size:10px;">3D
+Exploding Pie Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"BFE86141-0264-F4D6-E3AF-834840E3BE8C.html" title=
+"3D Multiple Series Pie Chart SQL Script" style=
+"font-size:10px;">3D Multiple Series Pie Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"DDAF9B74-152B-9FCB-8022-7D659F34C0F3.html" title=
+"2D Pie Chart SQL Script " style="font-size:10px;">2D Pie Chart SQL
+Script</a> <br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"5326C6A0-76A7-7333-61C7-7B75E7CF67F9.html" title=
+"2D Exploding Pie Chart SQL Script " style="font-size:10px;">2D
+Exploding Pie Chart SQL Script</a> <br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"2E62329F-FC32-7C55-1B9B-A79C9DD8C734.html" title=
+"2D Multiple Series Pie Chart SQL Script " style=
+"font-size:10px;">2D Multiple Series Pie Chart SQL Script</a> <br>
+<img style="margin:0;" src="images/section-indicator.gif"><a href=
+"C12C4253-67E0-D22E-7326-4F00A26BC522.html" title=
+"Scatter Chart SQL Scripts" style="font-size:10px;">Scatter Chart
+SQL Scripts</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"3A5FB1ED-54CB-3C2D-A25F-2AEB1A9BAB8B.html" title=
+"3D Scatter Chart SQL Script " style="font-size:10px;">3D Scatter
+Chart SQL Script</a> <br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"5737E5D6-D913-AE54-FEC6-5E4AF98580E6.html" title=
+"3D Linear Regression Chart SQL Script" style="font-size:10px;">3D
+Linear Regression Chart SQL Script</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"2987B439-8A9E-E91C-209D-B83C0F04FD43.html" title=
+"3D Zero Crossing Chart SQL Script " style="font-size:10px;">3D
+Zero Crossing Chart SQL Script</a> <br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"32D18CAC-BAE3-846A-B4FB-0D8774C0ED0A.html" title=
+"2D Scatter Chart SQL Script " style="font-size:10px;">2D Scatter
+Chart SQL Script</a> <br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"06831473-7445-9F14-1F86-C751EEC25166.html" title=
+"2D Linear Regression Chart SQL Script " style="font-size:10px;">2D
+Linear Regression Chart SQL Script</a> <br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"B75205E1-0584-A771-FAAF-331E31F3B29A.html" title=
+"2D Zero Crossing Chart SQL Script " style="font-size:10px;">2D
+Zero Crossing Chart SQL Script</a> <br>
+<img style="margin:0;" src="images/section-indicator.gif"><a href=
+"F8C9B948-17D2-4219-DAC0-010A3EA69921.html" title=
+"Surface Chart SQL Scripts" style="font-size:10px;">Surface Chart
+SQL Scripts</a><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"3E1873E8-3DFB-2F84-70F4-C712D0E272C5.html" title=
+"3D Surface Chart SQL Script " style="font-size:10px;">3D Surface
+Chart SQL Script</a> <br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href=
+"DD813F86-2475-0666-9359-6F3787DFCF75.html" title=
+"2D Surface Chart SQL Script" style="font-size:10px;">2D Surface
+Chart SQL Script</a><br>
+</td>
+<td width="80%" valign="top" style=
+"vertical-align:top; margin:0; padding-left:7px;padding-right:7px;">
+<h1 style="margin-top:0; margin-bottom:7px">3D 100% Stacked Area
+Chart SQL Script</h1>
+
+<p><span style=
+"font-family: Monospaced; color: #666666; font-size: small;"><em>-------------------------------------------------------------------------------------------------------------------------------------------------------------</em></span><br>
+ <span style=
+"font-family: Monospaced; color: #666666; font-size: small;"><em>--
+3D 100% Stacked Area Chart</em></span><br>
+ <span style=
+"font-family: Monospaced; color: #666666; font-size: small;"><em>--<br>
+ --&nbsp;&nbsp; Notes: The query below will work on the following
+database servers:<br>
+ --&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MS SQL
+Server, Sybase ASE, Sybase IQ, Sybase Anywhere, MySQL,
+PostreSQL<br>
+--<br>
+--&nbsp;&nbsp; ORACLE: To make the query below work in Oracle, add
+" FROM DUAL" at the end of each
+SELECT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+ --&nbsp;&nbsp; DB2: To make the query below work in DB2, add "
+FROM SYSIBM.SYSDUMMY1" at the end of each SELECT<br>
+--------------------------------------------------------------------------------------------------------</em></span><span
+ style=
+"font-family: Monospaced; color: #666666; font-size: small;"><em>-----------------------------------------------------</em></span></p>
+
+<p><span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+select</strong></span> <span style=
+"font-family: serif; color: #ff00ff; font-size: small;">1</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">category,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">40</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s1,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">75</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s2,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">75</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s3,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">75</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s4</span><br>
+ <span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+union</strong></span><br>
+ <span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+select</strong></span> <span style=
+"font-family: serif; color: #ff00ff; font-size: small;">2</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">category,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">5</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s1,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">45</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s2,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">75</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s3,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">75</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s4</span><br>
+ <span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+union</strong></span><br>
+ <span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+select</strong></span> <span style=
+"font-family: serif; color: #ff00ff; font-size: small;">3</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">category,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">20</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s1,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">80</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s2,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">75</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s3,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">75</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s4</span><br>
+ <span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+union</strong></span><br>
+ <span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+select</strong></span> <span style=
+"font-family: serif; color: #ff00ff; font-size: small;">4</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">category,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">70</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s1,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">25</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s2,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">75</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s3,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">75</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s4</span><br>
+ <span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+union</strong></span><br>
+ <span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+select</strong></span> <span style=
+"font-family: serif; color: #ff00ff; font-size: small;">5</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">category,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">20</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s1,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">75</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s2,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">75</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s3,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">75</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s4</span><br>
+ <span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+union</strong></span><br>
+ <span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+select</strong></span> <span style=
+"font-family: serif; color: #ff00ff; font-size: small;">6</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">category,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">5</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s1,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">75</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s2,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">75</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s3,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">75</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s4</span><br>
+ <span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+union</strong></span><br>
+ <span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+select</strong></span> <span style=
+"font-family: serif; color: #ff00ff; font-size: small;">7</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">category,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">33</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s1,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">60</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s2,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">75</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s3,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">75</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s4</span><br>
+ <span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+union</strong></span><br>
+ <span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+select</strong></span> <span style=
+"font-family: serif; color: #ff00ff; font-size: small;">8</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">category,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">95</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s1,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">80</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s2,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">75</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s3,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">75</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s4</span><br>
+ <span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+union</strong></span><br>
+ <span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+select</strong></span> <span style=
+"font-family: serif; color: #ff00ff; font-size: small;">9</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">category,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">10</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s1,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">50</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s2,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">75</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s3,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">75</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s4</span><br>
+ <span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+union</strong></span><br>
+ <span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+select</strong></span> <span style=
+"font-family: serif; color: #ff00ff; font-size: small;">10</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">category,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">70</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s1,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">90</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s2,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">75</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s3,</span>
+<span style=
+"font-family: serif; color: #ff00ff; font-size: small;">75</span>
+<span style=
+"font-family: Monospaced; color: #0000ff; font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif; color: #993300; font-size: small;">s4</span><br>
+ <span style=
+"font-family: Monospaced; color: #46b13b; font-size: small;"><strong>
+GO</strong></span><br>
+ <span style=
+"font-family: serif; color: #0066cc; font-size: small;">.setResultSettings</span>
+<span style=
+"font-family: serif; color: #ff0000; font-size: small;">'Index=1,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">CategoryFields="[category]",</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">SeriesFields="[s1],[s2],[s3],[s4]",</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">ShowChart=true,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">ShowToolbar=true,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">Paging=true,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">Split=300,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">Chart="{stackedarea,stackedarea,stackedarea,stackedarea}",</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">RotX=325,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">RotY=-26,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">RotZ=0,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">Zoom=17.606081,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">ScaleData=true,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">ShowLegend=true,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">ShowGrid=true,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">Title="3D
+100% Stacked Area Chart",</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">PieExplode=0.0,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">GroupSmallValues=true,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">SmallValuesThreshold=3.0,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">PieLabelDistance=3.0,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">PieShowLines=false,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">LineWidth=1.0,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">Width=16.0,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">Height=10.0,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">Depth=4.0,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">SeriesSpacing=0.5,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">CategorySpacing=0.5,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">Font="Arial-6",</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">TopColor="#D7DCF5",</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">BottomColor="#EBF0F5",</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">PanX=-10.399995,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">PanY=-3.4999988,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">Lighting=Default,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">View2D=false,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">StackedPercent=true,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">ShowValueAxis=true,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">ShowCategoryAxis=true,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">ShowSeriesAxis=false,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">ValueAxisNumberFormat="###0",</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">CategoryAxisNumberFormat="#,##0",</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">NumericCategoryAxis=false,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">MergeAxis=true,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">SeriesAlias="default,default,default,default",</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">SeriesSubType=",,,",</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">SeriesColumnType="Cube,Cube,Cube,Cube",</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">SeriesMin="default,default,default,default",</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">SeriesMax="default,default,default,default",</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">SeriesColor="default,default,default,#FFCC00",</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">SeriesFunctionMetaData="true,true,true,true",</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">LegendPosition=Top
+Right,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">LegendWidthType=Exact,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">LegendWidth=100,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">LegendHeightType=Fit,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">LegendHeight=160,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">ShowFixedCategoryCount=true,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style=
+"font-family: serif; color: #ff0000; font-size: small;">FixedCategoryCount=0'</span></p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>
+
