@@ -1,0 +1,404 @@
+body,td,div,p,a,font,span {
+    font-size: 12px;
+    font-family:"Trebuchet MS", helvetica, arial, sans-serif;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:normal;
+    color: #222222;
+}
+
+
+a, a.visited {
+    color: blue;
+    text-decoration:underline;
+}
+
+table.bordered {
+    border: 1px solid #dae8ff;
+    border-collapse:collapse;
+    border-spacing:10px;
+    margin: 7px;
+}
+
+#imgnoclip img { /* this is so IE does not clip the tops of the images in the status table on home.jsp */
+    margin:0;
+}
+    
+
+div.clear {
+    clear:both;
+}
+
+
+div.fckheight {
+    min-height:100%;
+    margin:0;
+
+}
+
+th.bordhead {
+    background: #c2dafe;
+    height:1%;
+    border: #dae8ff;
+    border-bottom: 1px solid #dae8ff;
+    border-top: 1px solid #dae8ff;
+    text-align: left;
+}
+
+th.bordsubhead {
+    background: #e0ecff;
+    /*padding: 0;*/
+    height:1%;
+    border: gray;
+    border-bottom: 1px solid #BBBBBB;
+    border-top: 1px solid #BBBBBB;
+    text-align: left;
+}
+
+th.bordhead a {
+    color: black;
+    text-decoration:none;
+    font-weight:bold;
+    display:block;
+    font-size:12px;
+}
+
+/* begin added 1/3/2007 for gradients */
+th.gbordhead { /* this is used for grey gradient table headers */
+	width:100%;
+	height:1%;
+    font-size:100%;
+    padding:0 0 0 4px;
+	line-height:normal;
+	background-image: url("/images/tabgifs/greygradient.gif"); /* within AC the directory this is in is ../images/    */
+	background-repeat: repeat-x; /* the image repeats only horizontally */
+	background-position: left top; /* the image is positioned at the top left corner of the th  */
+	background-color:#666666; /* this fills out whatever is left with the same color as the bottom of the gradient  */
+	border-top:solid 1px #CCCCCC; /* this border matches the top of the gradient gif */
+	border-bottom:solid 1px #999999; /* this border matches the bottom of the gradient gif */
+}
+
+.clearbutton { /* makes the clear button gray gradient white text */
+    background-color:#929292;
+    background-image:url("/images/tabgifs/greygradient.gif");
+    color:#FFFFFF;
+}
+
+.submitbutton { /* makes the submit button gray gradient black text */
+    background-color:#929292;
+    background-image:url("/images/tabgifs/greygradient.gif");
+    color:#000000;
+}
+
+.button { /* used to make smaller submit buttons */
+    font-size:small;
+    height:22px;
+}
+
+/* end added 1/3/2007 for gradients */
+
+font.subtitle {
+    font-weight:normal;
+}
+
+a.issuecell {
+    color: darkblue;
+    text-decoration:none;
+    font:inherit;
+}
+
+a.issueheader {
+    color: black;
+    text-decoration:none;
+    font-weight:bold;
+    /*font:inherit;*/
+    display:block;
+}
+
+a.listheader {
+    color: black;
+    text-decoration:none;
+    font-weight:bold;
+    display:block;
+    font-size:12px;
+}
+
+div.hr {
+    font-size:1px;
+    height: 1px;
+    border-bottom:#D3D3D3 solid 1px;
+    margin:0 auto 9px auto;
+    padding:0;
+    width:99%;
+}
+
+div.docsubtitlehr {
+    font-size:1px;
+    height: 1px;
+    border-bottom:#D3D3D3 solid 1px;
+    margin:0 auto 9px -3px;
+    padding:0;
+    width:100%;
+}
+
+select.browse-panel {
+    margin:6px 6px 6px 6px;
+    width:150px;
+}
+
+table#loginbox {
+    width:275px;
+    height: 180px;
+}
+
+p.borderedBoxContents {
+    margin-left:7px;
+    margin-right:7px;
+    margin-top:7px;
+    margin-bottom:7px
+}
+
+div.borderedBoxContents {
+    margin-left:7px;
+    margin-right:7px;
+    margin-top:7px;
+    margin-bottom:7px
+}
+
+p.navigation {
+    margin-left:7px;
+    margin-right:7px;
+    margin-top:7px;
+    margin-bottom:7px;
+    text-align:left;
+}
+
+span.formident {
+    font-weight:bold;
+    margin-top:9px;
+}
+
+span.parenthetical {
+    color:#909090;
+    margin-bottom:9px;
+}
+
+.highlight em {
+	font-style:normal;
+	background-color: yellow;
+}
+
+img {
+    border: 0;
+    margin: -4px 0 -4px 0;
+}
+
+input.invite {
+    margin: 9px 0 0 9px;
+}
+
+td {
+    text-align:left;
+}
+
+
+h1.dochead1 {
+    margin-bottom: 0;
+    margin-top: 3px;
+}
+
+span.viewmodebox {
+    border: #3377bb solid 2px;
+    border-top:none;
+    border-bottom:none;
+    padding: 2px 3px 2px 3px;
+    margin: 0 0 0 -2px;
+}
+
+img.normalmargins {
+    margin: 0 0 0 0;
+}
+
+a.docsidebartablinked { /* used on linked tabs on left side of wiki-docs */
+    background-color:#c3d9ff;
+    border: 1px solid #c3d9ff;
+    font-size:12px;
+    padding:2px 1em 2px 1em; 
+    margin-bottom:0;
+    margin-left:0;
+    margin-right:0;
+    margin-top:0;
+    font-weight:bold;
+    float:left;
+}
+
+span.docsidebartabunlinked { /* used on unlinked tabs on left side of wiki-docs */
+    background-color:#e0ecff;
+    border:1px solid #c3d9ff;
+    /*font-size:80%;*/
+    font-weight:bold;
+    padding:2px 1em 2px 1em;
+    font-size:12px;
+    float:left;
+}
+
+td.docsidebartab {
+    border:1px solid #c3d9ff;
+    border-bottom: 0;
+    font-size:10px;
+    border-collapse:collapse;
+    text-align: center;
+}
+
+option.icon {
+    padding: 0 0 0 18px;
+    background-repeat: no-repeat;
+    background-position: 1px 0;
+    vertical-align: middle;
+}
+
+/* The tabscontainer css is used for the tabs at the very top of every page added December 2007 */
+#tabscontainer {
+    width:100%;
+    font-size:93%;
+    line-height:normal;
+    margin-left:0;
+    padding-left:0;
+}
+
+#tabscontainer ul { /* this sets the orientation of the entire unordered list in the tabs at the top of every page */
+    margin-top:0;
+    margin-bottom:0;
+    margin-right:0;
+    margin-left:175px;
+    padding:25px 10px 0;
+    list-style:none;
+}
+#tabscontainer li { /* this sets the orientation of each item in the list individually */
+    float:left;
+    background:url("/images/tabgifs/bnorm_right.gif") no-repeat right top;
+    margin-bottom: -1px;
+}
+
+#tabscontainer a { /* this sets how links within the unordered list are displayed */
+    float:left;
+    display:block;
+    background:url("/images/tabgifs/bnorm_left.gif") no-repeat left top;
+    padding:5px 15px 5px 22px;
+    text-decoration:none;
+    font-weight:bold;
+    color:#fff;
+}
+
+/* Commented Backslash Hack
+   hides rule from IE5-Mac \*/
+#tabscontainer a {float:none;}
+/* End IE5-Mac hack */
+
+#tabscontainer a:hover { /* this sets color of a link with the cursor over it in the tabs at the top of the page */
+  color:#000;
+}
+
+#tabscontainer #current { /* this changes the background of right side of the current tab at the top of the page */
+    background-image:url("/images/tabgifs/bnorm_right_on.gif");
+}
+#tabscontainer #current a { /* this changes the background of left side of the current tab at the top of the page */
+    background-image:url(/images/tabgifs/bnorm_left_on.gif);
+    color:#000;
+    padding-bottom:5px;
+}
+
+#sitelogo { /* container for aquaclusters logo at the top of the page */
+	float:left;
+	padding:0 0 0 0;
+	margin: 0 0 -44px 0; /* negative margin pulls the logo down rest on the blue area beneath it */
+	border:0;
+}
+
+#sitelogo a { /* container for aquaclusters logo positioning so the a href fits around it correctly */
+    position:relative;
+    width:175px;
+    height:45px;
+    padding:0 0 0 0;
+    margin: 8px 0 10px 0; /* the 10px is used to make the a href fit around the logo closely at the bottom */
+    background:none;
+}
+
+#tabscontainer_sub_empty { /* this is used to set the height of the bar under the top-most tabs near the aquaclusters logo */
+	float:left;
+	display:block;
+	width:100%;
+    height:5px; /* this height, and the margins and padding below help keep its size and allow the tabs to touch it without a gap above */
+	/*margin:1px 3px 0 3px;*/
+    margin:0 0 0 0;
+    padding:5px 0 4px 0;
+	background-color:#c3d9ff;
+}
+
+/* the tabscontainer_sub is used for the area below the rectangular tabs within the midbar added Dec 2007 */
+#tabscontainer_sub {
+	float:left;
+	width:100%;
+    font-size:10px;
+	line-height:normal;
+    margin:0 0 0 0;
+	background-color:#c3d9ff;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    height:23px;
+  }
+
+#tabscontainer_sub a {
+  text-decoration:none;
+  color:#000;
+}
+
+#tabscontainer_sub ul {
+    list-style:none;
+    margin:0px 0px 0px 7px; /* this indents the entire horizontal list 7px toward the right to match the tab text above it */
+    padding:0px 0px 0px 0px;
+}
+
+#tabscontainer_sub li {
+    margin:0px 0px 0px 0px; /* these are set to 0px to pull all the items closer together as per Niels comment on Jan 16 2008 */
+    padding:0px 0px 0px 0px; /* these are set to 0px to pull all the items closer together as per Niels comment on Jan 16 2008 */
+    float:left;
+}
+
+/* gradient for th.bordhed  */
+#gradient { 
+	float:left;
+	width:100%;
+	font-size:100%;
+	line-height:normal;
+	background-image: url("../images/tabgifs/greygradient.gif"); /* within AC the directory this is in is ../images/    */
+	background-repeat: repeat-x; /* the image repeats only horizontally */
+	background-position: left top; /* the image is positioned at the top left corner of the th  */
+	background-color:#666666; /* this fills out whatever is left in the cell with the same color as the darkest bottom part of the gradient  */
+  }
+  
+#gradient a { /* this makes the text of a link within the gradient cells dark for higher contrast on the dark background */
+  float:left;
+  padding:10px;
+  margin:0;
+  text-decoration:none;
+  font-weight:bold;
+  color:#000;
+  }
+
+a.breadcrumb, div.breadcrumb {
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+div.pageTitleAlligner {
+    padding-left:9px;
+}
+
+td.tableElement {
+    padding: 3px;
+}
+
+div.children {
+    padding-left:15px;
+}

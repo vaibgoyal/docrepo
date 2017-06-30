@@ -1,0 +1,409 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>ExcelSQL - SQL Query and Administration Tool  | AquaFold</title>
+    <meta name="description" content="Aqua Data Studio natively connects to ExcelSQL. Features schema browser, visual query builder, table data editor, schema script generator, ER modeler, import/export and other tools.">
+    <meta name="keywords" content="ExcelSQL, ExcelSQL sql tool, ExcelSQL query tool, ExcelSQL administration, ExcelSQL dba tool,  sql queries, sql query tool, sql query, query tool, database query tool, sql tools, advanced sql query, sql scripts, query tools, sql query builder, sql tool, database query sql, sql server tools, query analyzer, database queries, sql query tools, db2 sql query, tools sql, tools database sql, sql server data base management tool, sql script, sql script editor, db2 tools, execute sql, sql query scripts, sql script writer">
+    <meta name="robots" content="noodp,noydir" />
+    <link rel="SHORTCUT ICON" href="http://www.aquafold.com/favicon.ico">
+    <link rel='stylesheet' href='../style/bootstrap/css/bootstrap.css'>    
+    <link rel='stylesheet' href='../style/lightbox.css'>
+    <link rel="stylesheet" href="../style/ac.css">
+<style type="text/css">
+
+/** 
+* details table css 
+*/
+table#details {
+	width:100%;
+	background-color:#f3f9fd;
+}
+table#details tr.whiterow { 
+	background-color:#ffffff;
+	width:100%;
+}
+table#details tr { 
+	width:100%;
+}
+table#details tr td:first-child { 
+	text-align:left;
+	padding:0px 0px 0px 20px;
+	vertical-align:top;
+	backround-color:inherit;
+	font-size:10px;
+}
+table#details td {
+	text-align:center;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #3B3B3B;	
+	background:inherit;
+	font-size:10px;
+}
+table#details td.section {
+	text-align:center;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #3B3B3B;
+	font-weight:bold;
+	background:inherit;
+	font-size:10px;
+	
+}
+table#details td.sectionrow:first-child {
+	text-align:left;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #3B3B3B;
+	font-weight:bold;
+	background:inherit;
+	padding:10px 0px 5px 0px;
+	font-size:10px;
+	
+}
+table#details td img {
+border:none 0px;
+margin:0px;
+padding:2px;
+}
+-->
+</style>
+
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script>jQuery.noConflict();</script>
+<script type="text/javascript" src="js/prototype.js"></script>
+<script type="text/javascript" src="js/scriptaculous.js?load=effects,builder"></script>
+<script type="text/javascript" src="js/lightbox.js"></script>
+
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+
+
+
+
+
+<script type="text/javascript"  >
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-3163490-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+
+
+
+<body>
+<div class="container">
+<!-- Navbar
+================================================== -->
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="brand" href="http://www.aquafold.com/" >
+				<img src="../images/aquafold_logo_blue_bubbles.png" alt="AquaFold, Inc." title="AquaFold, Inc." />
+			</a>
+<div class="nav-collapse" >
+				<ul class="nav">
+					<li class="active">
+						<a href="../aquadatastudio.html">Aqua Data Studio</a>
+					</li>
+					<li class="">
+						<a href="../aquadataserver.html">Aqua Data Server</a>
+					</li>
+					<li class="">
+						<a href="../aquaclusters.html">AquaClusters</a>
+					</li>
+				</ul>
+				<ul class="nav pull-right">
+					<li>
+						<a href="../support.html">Support</a>
+					</li>
+					<li>
+						<a href="../store.html">Buy</a>
+					</li>
+					<li>
+						<a href="../company.html" class="company">Company</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Subnav
+================================================== -->
+<div class="subnav">
+	<ul class="nav nav-pills">
+		<li>
+			<a href="../aquadatastudio.html">Overview </a>
+		</li>
+		<li >
+			<a href="../aquadatastudio_whats_new.html">What&#8217;s New </a>
+		</li>
+		<li>
+			<a href="../aquadatastudio_features.html">Features &amp; Screenshots</a>
+		</li>
+		<li>
+			<a href="../aquadatastudio_downloads.html">Download</a>
+		</li>		
+		<li>
+			<a href="../aquadatastudio_documentation.html">Documentation</a>
+		</li>
+<li>
+			<a href="../aquadatastudio_videos.html">Videos</a>
+		</li>
+
+		<li>
+			<a href="../store.html">Buy</a>
+		</li>
+		<li>
+			<img src="../images/aquadatastudio_logo_gray_no_bubbles.png" style="left:111px;top0px;" />
+		</li>
+  </ul>
+</div>
+<br clear="all" /> 
+<!-- top table with slideshow
+================================================== -->
+
+
+<table border=0 cellspacing=0 cellpadding=0 width="100%" style="margin-top:0px;">
+<tr>
+        <td valign="top" style="background-color:whitesmoke;padding:10px 20px;border-bottom-left-radius:6px;border-top-left-radius:6px;">
+   <h3>Aqua Data Studio for </span><img src="../images/ms_excel_logo_164x29.png" style="border:0px;margin-bottom:-2px;display:inline-block;vertical-align:text-bottom" alt="MS Excel" title="MS Excel" /></h3>
+<p><span class="label label-warning">Enhanced in 17.0</span> Aqua Data Studio provides a SQL management tool for Excel<sup id ="cite_ref-1"><a href="#cite_note-1">[1]</a></sup> files. The visual administration features provide users the ability to browse workbooks, worksheets and column structures. An integrated query tool allows you to quickly create, edit and execute SQL.</p>
+<p><strong><a href="https://www.aquaclusters.com/app/home/project/public/aquadatastudio/wikibook/MS-Excel/page/SQL-Query-Reference/SQL-Query-Reference">ExcelSQL </a></strong> is a SQL-92 based SQL language that offers a rich syntax to execute queries with WHERE, JOIN, ORDER BY, GROUP BY, HAVING and UNION clauses. Subqueries, derived tables, JOINs across multiple workbooks and many convenient DB functions are also supported.</p>
+
+<a href="../aquadatastudio_downloads.html"><button class="btn btn-success btn-large">Try Aqua Data Studio for Free</button></a>
+</p>
+</td>
+  <td valign="top" style="background-color:whitesmoke;padding:20px 20px 20px 20px;border-bottom-right-radius:6px;border-top-right-radius:6px;">
+  <div id="adstudioCarousel" class="carousel slide" data-interval="5000" > 
+ <!-- carousel items -->
+       <div class="carousel-inner drop-shadow" style="width:476px;">
+		   <div class="active item">
+<a href="images/excel/aquadatastudio_excel_schema_browser.png" style="text-decoration:none;" rel="lightbox"  title="Excel - Schema Browser"><img src="images/excel/aquadatastudio_excel_schema_browser_476x300.png" style="width:476px;height:300px;border:0px;" alt="Excel - Schema Browser"  title="Excel - Schema Browser" />
+			<div class="carousel-caption" style="text-align:center;">
+				<p>1 of 4 - Excel - Schema Browser</p>
+				</div></a>
+		  </div> 
+      <div class="item">
+<a href="images/excel/aquadatastudio_excel_visual_analytics.png" style="text-decoration:none;" rel="lightbox" title="Excel - Visual Analytics"><img src="images/excel/aquadatastudio_excel_visual_analytics_476x300.png" style="width:476px;height:300px;border:0px" alt="Excel - Visual Analytics" title="Excel - Visual Analytics" />
+			<div class="carousel-caption" style="text-align:center;">
+				<p>2 of 4 - Excel - Visual Analytics</p>
+				</div></a>
+		  </div>
+	  <div class="item">
+<a href="images/excel/aquadatastudio_excel_query_analyzer.png" style="text-decoration:none;" rel="lightbox" title="Excel - Query and Analysis Tool"><img src="images/excel/aquadatastudio_excel_query_analyzer_476x300.png" style="width:476px;height:300px;border:0px" alt="Excel - Query and Analysis Tool" title="Excel - Query and Analysis Tool" />
+			<div class="carousel-caption" style="text-align:center;">
+				<p>3 of 4 - Excel - Query Window</p>
+				</div></a>
+		  </div>
+     <div class="item">
+<a href="images/excel/aquadatastudio_excel_query_builder.png" style="text-decoration:none;" rel="lightbox" title="Excel - Query Builder"><img src="images/excel/aquadatastudio_excel_query_builder_476x300.png" style="width:476px;height:300px;border:0px" alt="Excel - Query Builder" title="Excel - Query Builder" />
+			<div class="carousel-caption" style="text-align:center;">
+				<p>4 of 4 - Excel - Query Builder</p>
+				</div></a>
+		  </div> 
+
+</div>
+<!-- Carousel nav -->
+ <a class="carousel-control left" href="#adstudioCarousel" data-slide="prev" style="margin-left:408px;margin-top:182px;width:20px;height:20px;font-size:24px;line-height:17px">&lsaquo;</a>
+ <a class="carousel-control right" href="#adstudioCarousel" data-slide="next" style="margin-right:-18px;margin-top:182px;width:20px;height:20px;font-size:24px;line-height:17px">&rsaquo;</a>
+ </div>
+
+ 
+</td>
+                            </tr>
+</table>
+<br />
+
+<div class="row">
+<div class="span6">        
+        <!-- begin left side table cell containing the tables with list inside them -->
+<div class="well dbspecific">
+<h3>Support: <span style="font-size:14px;font-weight:normal;">Schema Navigation | Visual Editing | DDL Scripting</span></h3>
+<div style="padding:10px 10px 10px 10px;background:white;margin-top:20px;">
+			<table id="details" border=0 cellspacing=0 cellpadding=0 >
+<tbody>
+                            <tr class="whiterow">
+                                <td width="30%"> </td>
+                                <td width="20%" class="section">Browsing</td>
+                                <td width="25%" class="section">Visual Editing</td>
+                                <td width="25%" class="section">DDL Scripting</td>
+                            </tr>
+                            <tr class="whiterow">
+                            	<td width="31%" class="sectionrow" style="padding-top:0px;">                                    
+                                    Schema                             </td>
+                                <td width="20%" ></td>
+                                <td width="20%" ></td>
+                                <td width="20%" ></td>
+                            </tr>
+                            <tr class="whiterow">
+                                <td width="31%">                                    
+                                    Tables                                </td>
+                                <td width="20%" ><img src="images/checked.gif" alt="feature" title="feature"  /></td>
+                                <td width="20%" ></td>
+                                <td width="20%" ><img src="images/checked.gif" alt="feature" title="feature"  /></td>
+                            </tr>
+                             <tr class="whiterow">
+                            	<td class="sectionrow" colspan=4>Storage </td>
+                            </tr>
+                            <tr>
+                                <td >                                    
+                                    Databases                                    </td>
+                                <td width="20%" ><img src="images/checked.gif" alt="feature" title="feature"  /></td>
+                                <td width="20%" ></td>
+                                <td width="20%" ></td>
+                            </tr>
+
+            </tbody>
+            </table>
+            </div>
+
+			
+					
+				</div>
+				
+            <br>
+<!-- end left side table cell containing the tables with list inside them -->
+</div>
+<div class="span6">
+<!-- begin right side table cell containing the features links to videos and pages -->  
+
+<div class="well dbspecific">
+<h3>Excel Toolkit </h3>
+ <table border=0 cellspacing=0 cellpadding=0 style="width:100%;margin-top:6px;padding-right:14px">
+<tr height="30px">
+                                <td align="center" valign="center" style="padding:1px 1px 1px 1px;"> <img src="../images/16pxicons/visual_analytics.png" alt="Visual Analytics" ></td> 
+                                <td align="left" valign="center" style="padding:5px 20px 8px 10px;"><a href="../aquadatastudio/visual_analytics.html">Visual Analytics</a></td> 
+                                <td align="left" valign="center" style="padding:1px 1px 1px 1px;"></td>
+                            </tr>
+<tr height="30px">
+                                <td align="center" valign="center" style="padding:1px 1px 1px 1px;"> <img src="http://dd1.aquafold.com/images/main_query.png" alt="Query & Analysis Tool" ></td> 
+                                <td align="left" valign="center" style="padding:5px 20px 8px 10px;"><a href="https://www.aquaclusters.com/app/home/project/public/aquadatastudio/wikibook/MS-Excel/page/SQL-Query-Reference/SQL-Query-Reference"> ExcelSQL Query Reference</a></td> 
+                                <td align="left" valign="center" style="padding:1px 1px 1px 1px;"></td>
+                            </tr> 
+							
+<tr height="30px">
+                                <td align="center" valign="center" style="padding:1px 1px 1px 1px;"> <img src="../images/16pxicons/fluidshell.png" alt="FluidShell" ></td> 
+                                <td align="left" valign="center" style="padding:5px 20px 8px 10px;"><a href="https://www.aquaclusters.com/app/home/project/public/aquadatastudio/wikibook/Documentation17/page/246/FluidShell">FluidShell</a></td> 
+                                <td align="left" valign="center" style="padding:1px 1px 1px 1px;"></td>
+                            </tr>
+							
+<tr height="30px">
+                                <td align="center" valign="center" style="padding:1px 1px 1px 1px;"> <img src="http://dd1.aquafold.com/images/main_query.png" alt="Query & Analysis Tool" ></td> 
+                                <td align="left" valign="center" style="padding:2px 20px 8px 10px;" ><a href ="../aquadatastudio/query_analysis_tool.html">Query & Analysis Tool</a></td> 
+                                <td align="left" valign="center" style="padding:1px 1px 1px 1px;">  </td>
+                            </tr>
+<tr height="30px">
+                                <td align="center" valign="center" style="padding:1px 1px 1px 1px;"> <img src="http://dd1.aquafold.com/images/user_configurable_charts.png" alt="Grid and Pivot Charts" ></td> 
+                                <td align="left" valign="center" style="padding:2px 20px 8px 10px;"><a href ="../aquadatastudio/charts_and_graphs.html">Grid and Pivot Charts</a></td> 
+                                <td align="left" valign="center" style="padding:1px 1px 1px 1px;"></td>
+                            </tr>
+<tr height="30px">
+                                <td align="center" valign="center" style="padding:1px 1px 1px 1px;"> <img src="images/import_export_tool.png" alt="Export Tools" ></td> 
+                                <td align="left" valign="center" style="padding:2px 20px 8px 10px;"><a href ="../aquadatastudio/database_import_export_tool.html">Export Tools</a></td> 
+                                <td align="left" valign="center" style="padding:1px 1px 1px 1px;"></td>
+                            </tr>
+
+<tr height="30px">
+                                <td align="center" valign="center" style="padding:1px 1px 1px 1px;"> <img src="http://dd1.aquafold.com/images/menu_querybuilder.png" alt="Visual Query Builder" ></td> 
+                                <td align="left" valign="center" style="padding:2px 20px 8px 10px;"><a href="../aquadatastudio/visual_query_builder.html">Visual Query Builder</a></td> 
+                                <td align="left" valign="center" style="padding:1px 1px 1px 1px;">  </td>
+                            </tr>
+<tr height="30px">
+                                <td align="center" valign="center" style="padding:1px 1px 1px 1px;"> <img src="http://dd1.aquafold.com/images/menu_history.png" alt="SQL History" ></td> 
+                                <td align="left" valign="center" style="padding:2px 20px 8px 10px;"><a href="../aquadatastudio/sql_history.html">SQL History</a></td> 
+                                <td align="left" valign="center" style="padding:1px 1px 1px 1px;">  </td>
+                            </tr>
+
+
+<tr height="30px">
+                                <td align="center" valign="center" style="padding:1px 1px 1px 1px;"> <img src="http://dd1.aquafold.com/images/menu_script_execute.png" alt="Open API Scripting Environment" ></td> 
+                                <td align="left" valign="center" style="padding:2px 20px 8px 10px;"><a href="../aquadatastudio/javascript_ide_open_apis.html">Open API Scripting Environment</a></td> 
+                                <td align="left" valign="center" style="padding:1px 1px 1px 1px;"></td>
+                            </tr>
+
+
+<tr height="30px">
+                                <td align="center" valign="top" style="padding:1px 1px 1px 1px;"> <img src="http://dd1.aquafold.com/images/closedfoldernormal.1.png" alt="Version Control: SVN and CVS" ></td> 
+                                <td align="left" valign="top" style="padding:2px 20px 8px 10px;whitespace:nowrap;">
+                                    Version Control Clients
+                                    <br>&nbsp;&nbsp;
+                                        <a href ="../aquadatastudio/subversion_version_control_client.html">Subversion (SVN)</a>
+                                        , 
+                                        <a href ="../aquadatastudio/git_version_control_client.html">Git</a>
+                                        , 
+                                        <a href ="../aquadatastudio/cvs_version_control_client.html">CVS</a>
+                                        , 
+                                        <a href ="../aquadatastudio/perforce_version_control_client.html">Perforce</a>
+                                </td> 
+                                <td align="left" valign="center" style="padding:1px 1px 1px 1px;"></td>
+                            </tr>
+</table>
+                        </div>
+ 
+</div>
+
+            <!-- end right side table cell containing the features links to videos and pages -->
+</div>
+
+<h2 style="font-size:16px;border:0px none;">References</h2>
+<div class="copyfooter">
+
+<ol>
+<li id="cite_note-1"><b><a href="#cite_ref-1">^</a></b> <a href="http://en.wikipedia.org/wiki/Microsoft_Excel"> <em> Excel </em></a> Wikipedia article. Microsoft Excel is a spreadsheet developed by Microsoft for Microsoft Windows, Mac OS X, and iOS. It features calculation, graphing tools, pivot tables, and a macro programming language called Visual Basic for Applications.<br/>
+<a href="http://en.wikipedia.org/wiki/Microsoft"> <em> Microsoft </em></a> Wikipedia article.</li></li>
+</ol>
+</div>
+
+<!--Start Footer-->
+<div class="copyfooter">
+	<p style="float:left;padding-left:0px">
+		<a href="../index.html">
+		Home
+		</a>
+		&#149;
+		<a href="../aquadatastudio.html">
+		Aqua Data Studio
+		</a>
+		&#149;
+		<a href="../aquadataserver.html">
+		Aqua Data Server
+		</a>
+		&#149;                    
+		<a href="../aquaclusters.html">
+		AquaClusters
+		</a>
+		&#149;   
+		<a href="../support.html">
+		Support
+		</a>
+		&#149;
+		<a href="../store.html">
+		Buy
+		</a>
+
+		&#149;
+		<a href="../company.html">
+		Company
+		</a>
+		&#149;
+		<a href="http://www.aquafold.com/privacy.html">
+		Privacy
+		</a>
+	</p>
+	<p style="display:block;float:right;text-align:right;padding-right:0px;">
+	Copyright &copy; 2001&ndash;2016 AquaFold, Inc. All Rights Reserved.
+	</p>
+</div>
+<br />
+<!--End Footer-->
+
+</div>
+</body>
+</html>

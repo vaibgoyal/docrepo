@@ -1,0 +1,616 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Technical Analysis Solutions Examples - Overlays | AquaFold</title>
+    <meta name="description" content="Example project for building Overlay Charts for publically traded securities with Aqua Data Server - Candlestick Plot, Moving Average, Moving Standard Deviations, Keltner Channel, Ichimoku Clouds ">
+    <meta name="keywords" content="technical analysis charts, custom financial overlays, custom stock overlays, technical analysis api,  aqua data server examples, aquascript examples">
+    <meta name="robots" content="noodp,noydir" />
+    <link rel="SHORTCUT ICON" href="http://www.aquafold.com/favicon.ico">
+    <link rel='stylesheet' href='../style/bootstrap/css/bootstrap.css'>    
+    <link rel='stylesheet' href='../style/lightbox.css'>
+    <style type="text/css">
+<!--
+.style12 {font-size: 16px}
+-->
+
+    </style>
+
+
+<script type="text/javascript"  >
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-3163490-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<div class="container">
+<!-- Navbar
+================================================== -->
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="brand" href="http://www.aquafold.com/" >
+				<img src="../images/aquafold_logo_blue_bubbles.png" alt="AquaFold, Inc." title="AquaFold, Inc." />
+			</a>
+			<div class="nav-collapse" >
+				<ul class="nav">
+					<li class="">
+						<a href="../aquadatastudio.html">Aqua Data Studio</a>
+					</li>
+					<li class="active">
+						<a href="../aquadataserver.html">Aqua Data Server</a>
+					</li>
+					<li class="">
+						<a href="../aquaclusters.html">AquaClusters</a>
+					</li>
+				</ul>
+				<ul class="nav pull-right">
+					<li>
+						<a href="../support.html">Support</a>
+					</li>
+					<li>
+						<a href="../store.html">Buy</a>
+					</li>
+					<li>
+						<a href="../company.html" class="company">Company</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Subnav
+================================================== -->
+<div class="subnav">
+	<ul class="nav nav-pills">
+		<li>
+			<a href="../aquadataserver.html">Overview </a>
+		</li>
+		<li>
+			<a href="../aquadataserver_whats_new.html">What&#8217;s New</a>
+		</li>
+		<li>
+			<a href="../aquadataserver_features.html">Features &amp; Screenshots</a>
+		</li>
+		<li>
+			<a href="../aquadataserver_downloads.html">Download</a>
+		</li>		
+		<li>
+			<a href="../aquadataserver_documentation.html">Documentation</a>
+		</li>
+
+		<li>
+			<a href="../store.html">Buy</a>
+		</li>
+		<li>
+			<img src="../images/aquadataserver_logo_gray_no_bubbles.png" style="position:relative;left:179px;top:13px;">
+</li>
+</ul>
+</div>
+<br clear="all" /> 
+<!-- top table with slideshow
+================================================== -->
+
+<h3>Financial Overlays &ndash; Aqua Data Server Solution Examples</h3>
+<p>You can download project source code from:</strong><br/>
+<a href="http://www.aquafold.com/download/v17.0.0/solutions/MathSolutions.zip"> http://www.aquafold.com/download/v17.0.0/solutions/MathSolutions.zip<br/></a>
+Updated: Jan-29-2011</p> 
+</p>
+<h3 class="underlined">Charts Implemented in this Project</h3>
+<ul>
+<li><a href="#candelstick">Candlestick Plot </a> 
+<li><a href="#ma">Moving Average (MA), Exponential Moving Average (EMA) </a></li>
+<li><a href="#envelopes">Moving Average Envelopes </a></li>
+<li><a href="#stdiv">Moving Standard Deviations (variability) and Bollinger Bands</a></li>
+<li><a href="#keltner">Keltner Channel </a></li>
+<li><a href="#clouds">Ichimoku Clouds </a></li>
+</ul>
+</p>
+
+
+
+
+
+
+<h3 class="underlined">Introduction. Technical Indicators and Overlays.</h3>
+<p>
+A technical indicator is a series of data points that are derived by applying a formula to the price data of a security. 
+Price data includes any combination of the open, high, low or close over a period of time. 
+Some indicators may use only the closing prices, while others incorporate volume and open interest into their formulas.
+ The price data is entered into the formula and a data point is produced.
+<br/><br/>
+Indicators that use the same scale as prices of the security are typically plotted on top of the price bars and are therefore referred to as "Overlays."
+<br/><br/>
+AquaOpen API has financial methods that are useful in modeling price behavior. Some financial indicators shown in this example are implemented
+ in a single API method and can be invoked in one line of code, others require calling several API methods. The AquaScript environment 
+available to the user can be a valuable asset in constructing custom financial tools.
+
+
+
+
+</p>
+<h3 class="underlined">Inputs: Stock and Pricing Data.</h3>
+<p>
+In order to illustrate some of the features of aqua.math.financial, we will be 
+using standard pricing data. Specifically, the High, Low, Close, Open, Volume, 
+and Adjusted Close of the Dow Index daily values for 2010. Stock data for this example is taken from a stockdata2.csv file included in the project. 
+The file in turn was created by downloading data from one of publicly available sources such as http://finance.yahoo.com/
+<br/><br/>
+<div style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;margin-bottom:20px; background-color: rgb(238, 238, 238); border: 1px dotted black; font-family: courier new,courier;">
+<br/>
+
+
+var high= new Array();<br/>
+var low= new Array();<br/>
+var close= new Array();<br/>
+var open= new Array();<br/>
+var volume = new Array();<br/>
+var date = new Array();</p>
+//csv import <br/><br/>
+var TextFile = "C:/Aqua10-0 Workspace/share/aqua-projects/Solution Examples/Math Solutions/User Files/stockdata2.csv";<br/><br/>
+
+var reader = aqua.io.newTextReader();<br/><br/>
+reader.setFile(TextFile);<br/>
+reader.setFirstLineContainsColumnNames(true);<br/>
+reader.setCellDelimiter(",");<br/><br/>
+
+var dataSet = aqua.data.newDataSet();<br/><br/>
+
+
+dataSet.importData(reader);<br/><br/>
+
+dataSet.sort("Date",true);<br/>
+aqua.console.println(dataSet.getValueAt(0,1))<br/><br/>
+
+N=dataSet.getRowCount();<br/>
+for(i=0;i<N;i++){<br/><br/>
+
+date[i]=dataSet.getValueAt(i,0);<br/><br/>
+open[i]=parseFloat(dataSet.getValueAt(i,1));<br/>
+high[i]=parseFloat(dataSet.getValueAt(i,2));<br/>
+low[i]=parseFloat(dataSet.getValueAt(i,3));<br/>
+close[i]=parseFloat(dataSet.getValueAt(i,4));<br/>
+volume[i]=parseFloat(dataSet.getValueAt(i,5));<br/>
+}      
+<br/><br/>
+</div>
+
+
+
+
+
+<h3 class="underlined" id="candelstick" style="padding-top:62px;">CandleStick Plot</h3>
+<p>
+One of the most common ways to view pricing data is via candlestick plot. This chart has two components, 
+the body (range of open to close price) and the wick (range of high to low price) and illustrates the difference between these two ranges. 
+<br/><br/>
+Read More: <a href="http://en.wikipedia.org/wiki/Candlestick_chart"> http://en.wikipedia.org/wiki/Candlestick_chart</a>
+</p>
+<h3 class="underlined">Implementation:</h3>
+<p>
+This chart type is available in the Aqua Open API charting toolset.</p>
+ <div style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;margin-bottom:20px; background-color: rgb(238, 238, 238); border: 1px dotted black; font-family: courier new,courier;"> 
+<br/>
+chart.getProperties().setChartTypeCandleStick(); 
+<br/><br/>
+</div>   
+
+
+
+
+<a href="diagrams/candlestick plot.png"><img src="diagrams/candlestick plot.png" alt="CandleStick Plot" title="CandleStick Plot" border="0" style="margin-bottom:20px;" /></a>
+
+</p>
+
+
+
+
+
+
+
+
+<h3 id="ma" style="padding-top:62px;">Moving Average (MA), Exponential Moving Average (EMA)</h3>
+<p>
+A method of smoothing a time series to reduce the effects of random variation and reveal any underlying trend. This indicator is frequently used in 
+technical analysis showing the average value of a security's price over a set period. 
+Moving averages are used to emphasize the direction of a trend and to smooth out price and volume fluctuations, or "noise", that can confuse interpretation. 
+Typically, upward momentum is confirmed when a short-term average (e.g.15-day) crosses above a longer-term average (e.g. 50-day). 
+Downward momentum is confirmed when a short-term average crosses below a long-term average.
+Exponential Moving Average (EMA) is similar to Moving Average but values of the selected data points are weighted by exponentially decreasing with time coefficients
+
+<br/><br/>
+Read More: <a href="http://en.wikipedia.org/wiki/Moving_average"> http://en.wikipedia.org/wiki/Moving_average</a>
+</p>
+<h3 class="underlined">Implementation:</h3>
+<p>
+Moving Averages functions are available in the Aqua Open API "math" package.</p>
+<div style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;margin-bottom:20px; background-color: rgb(238, 238, 238); border: 1px dotted black; font-family: courier new,courier;">
+<br/>
+movAverage9 = aqua.math.financial.movingaverage(close,9);  // calculate simple moving average on closing price over period of 9 days
+<br/><br/>
+emovAverage9 = aqua.math.financial.ema(close,9);  // calculate exponential moving average on closing price over period of 9 days
+<br/><br/>
+</div>
+
+<br/><br/>
+
+<a href="diagrams/moving averages.png"><img src="diagrams/moving averages.png" alt="Moving Average" title="Moving Average" border="0" style="margin-bottom:20px;" /></a>
+
+</p>
+
+
+
+
+
+
+
+<h3 class="underlined" id="envelopes" style="padding-top:62px;">Moving Average Envelopes</h3>
+<p>
+Moving Average Envelopes are percentage-based envelopes set above and below a moving average. 
+The moving average, which forms the base for this indicator, can be a simple or exponential moving average.
+ Each envelope is then set the same percentage above or below the moving average. 
+This creates parallel bands that follow price action. With a moving average as the base, 
+Moving Average Envelopes can be used as a trend following indicator. However, this indicator is not limited to just trend following. 
+The envelopes can also be used to identify overbought and oversold levels when the trend is relatively flat and stock prices move beyond the envelope boundaries.
+<br/><br/>
+<!--Read More: <a href="http://en.wikipedia.org/wiki/Moving_average"> http://en.wikipedia.org/wiki/Moving_average</a> -->
+
+<h3 class="underlined">Implementation:</h3>
+<p>
+We can also construct moving average envelopes using Aqua Open API functions.</br></br>
+
+<div style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;margin-bottom:20px; background-color: rgb(238, 238, 238); border: 1px dotted black; font-family: courier new,courier;"> 
+<br/>
+
+    
+    model.setValue(0,i,ma9[i]+.025*ma9[i]); //upper band
+<br/><br/>
+    model.setValue(1,i,ma9[i]-.025*ma9[i]); //lower band
+<br/><br/>
+</div>   
+
+
+
+<a href="diagrams/envelopes.png"><img src="diagrams/envelopes.png" alt="Moving Average Envelopes" title="Moving Average Envelopes" border="0" style="margin-bottom:20px;" /></a>
+
+</p>
+
+
+
+
+
+
+
+
+<h3 class="underlined" id="stdiv" style="padding-top:62px;">Moving Standard Deviations (variability) and Bollinger Bands</h3>
+<p>
+In addition to tracking general trends, we may also wish to study the variablity of pricing information. 
+This can be done by calculating the moving standard deviation, which tells us the variability of the data over
+ a given period. We can then overlay the pricing data with an upper and lower bound on expected variability. 
+A special case of this is the popular Bollinger Band (2 standard deviations from moving average).
+Bollinger Bands are a technical analysis tool invented by John Bollinger that can be used to measure the highness or lowness of the price relative to previous trades.
+Bollinger Bands consist of:
+<br/><br/>
+    - a middle band being an N-period simple moving average (MA)
+<br/><br/>
+    - an upper band at K times an N-period standard deviation above the middle band (MA + K?)
+<br/><br/>
+    - a lower band at K times an N-period standard deviation below the middle band (MA ? K?)
+
+
+<br/><br/>
+Read More: <a href="http://en.wikipedia.org/wiki/Bollinger_Bands"> http://en.wikipedia.org/wiki/Bollinger_Bands</a>
+</p>
+<h3 class="underlined">Implementation:</h3>
+<p>
+Moving Standard Deviation and Bollinger Bands functions are available in the Aqua Open API "math" package.</p>
+      
+
+<div style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;margin-bottom:20px; background-color: rgb(238, 238, 238); border: 1px dotted black; font-family: courier new,courier;">
+<br/>
+movStd9 = aqua.math.financial.movingstd(close,9);  // calculate moving standard deviation of closing price over period of 9 days
+<br/><br/>
+    bollinger9 = aqua.math.financial.bollinger(close,9);  // calculate bollinger bands bounding closing price over period of 9 days
+<br/><br/>
+</div>
+
+
+<br/>
+The general case of bounding the price with moving standard deviation can be done in aquascript.
+<br/><br/>
+
+<div style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;margin-bottom:20px; background-color: rgb(238, 238, 238); border: 1px dotted black; font-family: courier new,courier;">
+<br/>
+
+    model3.setValue(0,i,ma9[i]+1*mstd9[i]); //upper band
+<br/><br/>
+    model3.setValue(1,i,ma9[i]-1*mstd9[i]); //lower band    
+<br/><br/>
+</div>
+
+
+
+
+
+
+<a href="diagrams/moving standard deviation.png"><img src="diagrams/moving standard deviation.png" alt="Moving Standard Deviations (variability) and Bollinger Bands" title="Moving Standard Deviations (variability) and Bollinger Bands" border="0" style="margin-bottom:20px;" /></a>
+
+</p></p>
+
+<h3 class="underlined"> Custom Overlays </h3>
+<p>
+The previous overlays are already available in aqua.math.financial, but users can use the scripting environment to construct custom overlays. We will build two useful overlays, Keltner Channel and IchiMoku Clouds.
+<br/><br/>
+
+
+
+
+
+
+
+<h3 class="underlined" id="keltner" style="padding-top:62px;">Keltner Channel</h3>
+<p>
+ Keltner Channel is a technical analysis indicator showing a central moving average line plus channel lines at a distance above and below. 
+It is an envelope overlay that tracks variability, like Bollinger Bands.
+However, instead of calculating the moving standard deviation, we use the Average True Range of the price as the variability measure. 
+The width of the Keltner bands are twice the difference between the average true range and the 20-day exponential moving average.
+In Keltner's description the centre line is an 10-day simple moving average of typical price, where typical price each day is the average of high, low and close.
+The lines above and below are drawn a distance from that centre line, a distance which is the simple moving average of the past 10 days' trading ranges (ie. range high to low on each day).
+The trading strategy is to regard a close above the upper line as a strong bullish signal, or a close below the lower line as strong bearish sentiment, and buy or sell with the trend accordingly, 
+but perhaps with other indicators to confirm.
+
+
+<br/><br/>
+Read More: <a href="http://en.wikipedia.org/wiki/Keltner_channel"> http://en.wikipedia.org/wiki/Keltner_channel</a>
+</p>
+<h3 class="underlined">Implementation:</h3>
+<p>
+There is no  Keltner Channel function in the Aqua Open API. We need to make a few calculations using available API methods to create it.</p>
+    We first calculate the True Range of the price data using aqua financial methods trh (true range high) and trl (true range low).
+</p>
+ 
+
+<div style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;margin-bottom:20px; background-color: rgb(238, 238, 238); border: 1px dotted black; font-family: courier new,courier;"> 
+<br/>
+
+    trueHigh=aqua.math.financial.trh(high,close); //calculate true range high
+<br/><br/>
+    trueLow=aqua.math.financial.trl(low,close); //calculate true range low
+<br/><br/>
+    var trueRange=new Array();
+<br/><br/>
+    for(i=0;i < trueLow.length;i++){
+<br/><br/>
+    trueRange[i]=trueHigh[i]-trueLow[i];
+<br/><br/>
+
+</div>   
+
+
+<p>
+Then, we find the moving average over 10 days of the true range, as well as the 20 day exppnential moving average.
+</p>
+
+
+<div style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;margin-bottom:20px; background-color: rgb(238, 238, 238); border: 1px dotted black; font-family: courier new,courier;"> 
+<br/>
+averageTrueRange=aqua.math.financial.movingaverage(trueRange,10);
+<br/><br/>
+    expMA20=aqua.math.financial.ema(close,20);
+<br/><br/>
+
+</div>   
+<p>
+
+Finally, we find the difference between the average true range and the 20 day exponential moving average. This can be assigned in the chart via setValue.
+</p>
+
+<div style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;margin-bottom:20px; background-color: rgb(238, 238, 238); border: 1px dotted black; font-family: courier new,courier;"> 
+<br/>
+    model.setValue(7,i,ema20[k]-2*averageTrueRange[k]); //lower Keltner Line
+<br/><br/>
+    model.setValue(8,i,ema20[k]+2*averageTrueRange[k]); //upper Keltner Line
+<br/><br/>
+</div>   
+
+
+
+
+
+
+<a href="diagrams/keltner channel.png"><img src="diagrams/keltner channel.png" alt="Keltner Channel" title="Keltner Channels" border="0" style="margin-bottom:20px;" /></a>
+
+</p>
+
+
+
+
+
+
+
+<h3 class="underlined" id="clouds" style="padding-top:62px;">Ichimoku Clouds</h3>
+<p>
+ Ichimoku clouds, or the One-Look Equilibrium Charts, are used to illustrate support and resistance levels as well as direction and strength of trends. 
+The "cloud" is the colored region between the Senkou spans (leadingA and LeadingB). 
+In general, the location of the pricing activity relative to the cloud is used as an indicator of bullish versus bearish market activity. 
+Four of the five plots within the Ichimoku Cloud are based on the average of the high and low over a given period of time. 
+For example, the first plot is simply an average of the 9-day high and 9-day low. Before computers were widely available,
+ it would have been easier to calculate this high-low average rather than a 9-day moving average. 
+<br/><br/>
+The Ichimoku Cloud consists of five plots: 
+<br/><br/>
+Tenkan-sen (Conversion Line): (9-period high + 9-period low)/2)) 
+The default setting is 9 periods and can be adjusted. On a daily 
+chart, this line is the mid point of the 9 day high-low range, 
+which is almost two weeks.  
+<br/><br/>
+Kijun-sen (Base Line): (26-period high + 26-period low)/2)) 
+The default setting is 26 periods and can be adjusted. On a daily 
+chart, this line is the mid point of the 26 day high-low range, 
+which is almost one month).  
+<br/><br/>
+Senkou Span A (Leading Span A): (Conversion Line + Base Line)/2)) 
+This is the midpoint between the Conversion Line and the Base Line. 
+The Leading Span A forms one of the two Cloud boundaries. It is 
+referred to as "Leading" because it is plotted 26 periods in the future
+and forms the faster Cloud boundary. 
+<br/><br/>
+Senkou Span B (Leading Span B): (52-period high + 52-period low)/2)) 
+On the daily chart, this line is the mid point of the 52 day high-low range, 
+which is a little less than 3 months. The default calculation setting is 
+52 periods, but can be adjusted. This value is plotted 26 periods in the future 
+and forms the slower Cloud boundary.
+<br/><br/>
+Chikou Span (Lagging Span): Close plotted 26 days in the past
+The default setting is 26 periods, but can be adjusted. 
+
+
+<br/><br/>
+Read More: <a href="http://en.wikipedia.org/wiki/Ichimoku_Kink%C5%8D_Hy%C5%8D"> http://en.wikipedia.org/wiki/Ichimoku_Kink%C5%8D_Hy%C5%8D</a>
+</p>
+<h3 class="underlined">Implementation:</h3>
+<p>
+There is no  Ichimoku Cloud function in the Aqua Open API. We need to make a few calculations using available API methods to create it.</p>
+<p>After declaring the relevant variables,</p>
+    
+
+<div style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;margin-bottom:20px; background-color: rgb(238, 238, 238); border: 1px dotted black; font-family: courier new,courier;"> 
+<br/>
+var convline=new Array(); Tenkan-sen (Conversion Line): //(9-period high + 9-period low)/2))
+<br/><br/>
+    var baseline=new Array(); //Kijun-sen (Base Line): (26-period high + 26-period low)/2))
+<br/><br/>
+    var leadingA=new Array(); //Senkou Span A (Leading Span A): (Conversion Line + Base Line)/2))
+<br/><br/>
+    var leadingA=new Array(); //Senkou SpanB (Leading Span B): (52-period high + 52-period low)/2))
+<br/><br/>
+    var lagging=new Array();  //Lagging Span (26 day lag of price) 
+<br/><br/>
+</div>   
+
+
+
+<p>
+we calculate the 9, 26 and 52 period highs and lows for the price data.
+</p>
+
+
+
+<div style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;margin-bottom:20px; background-color: rgb(238, 238, 238); border: 1px dotted black; font-family: courier new,courier;"> 
+<br/>
+    high9=aqua.math.financial.hhigh(close,9);// 9-day high
+<br/><br/>
+    low9=aqua.math.financial.llow(close,9);// 9-day low
+<br/><br/>
+    high26=aqua.math.financial.hhigh(close,26); //26-day high
+<br/><br/>
+    low26=aqua.math.financial.llow(close,26); //26-day low
+<br/><br/>
+    high52=aqua.math.financial.hhigh(close,52); //52-day high
+<br/><br/>
+    low52=aqua.math.financial.llow(close,52); //52-day low
+<br/><br/>
+</div>   
+<p>
+Next we build the spans, as well as the base and conversion lines.
+</p>
+
+  
+<div style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;margin-bottom:20px; background-color: rgb(238, 238, 238); border: 1px dotted black; font-family: courier new,courier;"> 
+<br/>
+    for(i=0;i < high9.length;i++){
+<br/><br/>
+          convline[i]=(high9[i]+low9[i])/2;
+<br/><br/>
+          baseline[i]=(high26[i]+low26[i])/2; 
+<br/><br/>
+          leadingA[i]=(convline[i]+baseline[i])/2;
+<br/><br/>
+          leadingB[i]=(high52[i]+low52[i])/2; 
+<br/><br/>
+</div>
+<p>
+
+Note that we can advance the leadingA and leadingB plots during the chart definition. Specifically,
+</p>
+   
+
+
+
+
+<div style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;margin-bottom:20px; background-color: rgb(238, 238, 238); border: 1px dotted black; font-family: courier new,courier;"> 
+<br/>
+ model5.setValue(4,i,leadingA[k-26]);// plots the leadingA data 26 days ahead
+<br/><br/>
+    model5.setValue(5,i,leadingB[k-26]); // plots the leadingB data 26 days ahead
+<br/><br/>
+</div>  
+<br/><br/>
+
+
+
+
+<a href="diagrams/ichimoku clouds.png"><img src="diagrams/ichimoku clouds.png" alt="Ichimoku Clouds" title="Ichimoku Clouds" border="0" style="margin-bottom:20px;" /></a>
+
+</p>
+
+
+
+
+
+<!--Start Footer-->
+<div class="copyfooter">
+	<p style="float:left;padding-left:0px">
+		<a href="../index.html">
+		Home
+		</a>
+		&#149;
+		<a href="../aquadatastudio.html">
+		Aqua Data Studio
+		</a>
+		&#149;
+		<a href="../aquadataserver.html">
+		Aqua Data Server
+		</a>
+		&#149;                    
+		<a href="../aquaclusters.html">
+		AquaClusters
+		</a>
+		&#149;   
+		<a href="../support.html">
+		Support
+		</a>
+		&#149;
+		<a href="../store.html">
+		Buy
+		</a>
+
+		&#149;
+		<a href="../company.html">
+		Company
+		</a>
+		&#149;
+		<a href="http://www.aquafold.com/privacy.html">
+		Privacy
+		</a>
+	</p>
+	<p style="display:block;float:right;text-align:right;padding-right:0px;">
+	Copyright &copy; 2001&ndash;2016 AquaFold, Inc. All Rights Reserved.
+	</p>
+</div>
+<br />
+<!--End Footer-->
+
+</div>
+</body>
+</html>

@@ -1,0 +1,1088 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>2D Surface Chart SQL Script</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="">
+<meta name="description" content="">
+
+
+
+
+<script type="text/javascript"  >
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-3163490-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<link rel="stylesheet" type="text/css" href="http://www.aquafold.com/style/bootstrap/css/bootstrap.css">
+
+
+</head>
+
+
+<body>
+
+<!--Start Header-->
+
+
+
+
+  <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-fixed-top">
+
+      <div class="navbar-inner">
+        <div class="container">
+
+    <a class="brand" href="http://www.aquafold.com" >
+	    <img src="http://www.aquafold.com/images/aquafold_logo_blue_bubbles.png" />
+    </a>
+          <div class="nav-collapse" >
+            <ul class="nav">
+              <li class="">
+                <a href="http://www.aquafold.com/aquadatastudio.html">Aqua Data Studio</a>
+              </li>
+              <li class="">
+                <a href="http://www.aquafold.com/aquadataserver.html">Aqua Data Server</a>
+              </li>
+
+              <li class="">
+                <a href="http://www.aquafold.com/aquaclusters.html">AquaClusters</a>
+              </li>
+</ul>
+<ul class="nav pull-right">
+              <li>
+                <a href="http://www.aquafold.com/support.html">Support</a>
+              </li>
+              <li>
+                <a href="http://www.aquafold.com/store.html">Buy</a>
+
+              </li>
+              <li>
+                <a href="http://www.aquafold.com/company.html" class="company">Company</a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+<!-- END top navigation Dec 2007 -->
+
+
+<div style="padding-top:30px;">
+<iframe src="header.html" frameborder="0" scrolling="no" height=
+"70px" width="100%">
+<h1>2D Surface Chart SQL Script</h1>
+</iframe><br>
+<table border="0" width="100%" summary="Table of Contents">
+<tr>
+<td width="20%" valign="top" bgcolor="white" style=
+"padding-top: 5px;">
+<div style="width:316px;"><div class="nowrap" style="padding-left: 5px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="0.html" title="Chart Example Screenshots">Chart Example
+Screenshots</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 5px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Area-Charts.html" title="Area Charts">Area Charts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 15px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Area-Chart-SQL-Scripts.html" title=
+"Area Chart SQL Scripts">Area Chart SQL Scripts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Area-Chart-SQL-Script.html" title=
+"3D Area Chart SQL Script">3D Area Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Stacked-Area-Chart-SQL-Script.html" title=
+"3D Stacked Area Chart SQL Script">3D Stacked Area Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-100-Stacked-Area-Chart-SQL-Script.html" title=
+"3D 100% Stacked Area Chart SQL Script">3D 100% Stacked Area Chart
+SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Area-Zero-Axis-Chart-SQL-Script.html" title=
+"3D Area Zero Axis Chart SQL Script">3D Area Zero Axis Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Area-Chart-SQL-Script.html" title=
+"2D Area Chart SQL Script">2D Area Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Stacked-Area-Chart-SQL-Script.html" title=
+"2D Stacked Area Chart SQL Script">2D Stacked Area Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-100-Stacked-Area-Chart-SQL-Script.html" title=
+"2D 100% Stacked Area Chart SQL Script">2D 100% Stacked Area Chart
+SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Area-Zero-Axis-Chart-SQL-Script.html" title=
+"2D Area Zero Axis Chart SQL Script">2D Area Zero Axis Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 5px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Bar-Charts.html" title="Bar Charts">Bar Charts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 15px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Bar-Chart-SQL-Scripts.html" title=
+"Bar Chart SQL Scripts">Bar Chart SQL Scripts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Column-Cluster-Chart-SQL-Script.html" title=
+"3D Column Cluster Chart SQL Script">3D Column Cluster Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Bar-Horizontal-Chart-SQL-Script.html" title=
+"3D Bar Horizontal Chart SQL Script">3D Bar Horizontal Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Bar-Horizontal-Zero-Axis-Chart-SQL-Script.html" title=
+"3D Bar Horizontal Zero Axis Chart SQL Script">3D Bar Horizontal
+Zero Axis Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Oblique-Bar-Chart-SQL-Script.html" title=
+"3D Oblique Bar Chart SQL Script">3D Oblique Bar Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Pyramid-Chart-SQL-Script.html" title=
+"3D Pyramid Chart SQL Script">3D Pyramid Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Stacked-Column-Chart-SQL-Script.html" title=
+"3D Stacked Column Chart SQL Script">3D Stacked Column Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Thin-Column-Chart-SQL-Script.html" title=
+"3D Thin Column Chart SQL Script">3D Thin Column Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Cone-Chart-SQL-Script.html" title=
+"3D Cone Chart SQL Script">3D Cone Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Cylinder-Chart-SQL-Script.html" title=
+"3D Cylinder Chart SQL Script">3D Cylinder Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Negative-Column-Chart-SQL-Script.html" title=
+"3D Negative Column Chart SQL Script">3D Negative Column Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Cylinder-Chart-SQL-Script.html" title=
+"2D Cylinder Chart SQL Script ">2D Cylinder Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Negative-Column-Chart-SQL-Script.html" title=
+"2D Negative Column Chart SQL Script">2D Negative Column Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Bar-Horizontal-Chart-SQL-Script.html" title=
+"2D Bar Horizontal Chart SQL Script">2D Bar Horizontal Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Bar-Horizontal-Zero-Axis-Chart-SQL-Script.html" title=
+"2D Bar Horizontal Zero Axis Chart SQL Script">2D Bar Horizontal
+Zero Axis Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Column-Cluster-Chart-SQL-Script.html" title=
+"2D Column Cluster Chart SQL Script">2D Column Cluster Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Stacked-Column-Chart-SQL-Script.html" title=
+"2D Stacked Column Chart SQL Script">2D Stacked Column Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 5px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Bubble-Charts.html" title="Bubble Charts">Bubble
+Charts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 15px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Bubble-Chart-SQL-Scripts.html" title=
+"Bubble Chart SQL Scripts">Bubble Chart SQL Scripts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Bubble-Chart-SQL-Script.html" title=
+"3D Bubble Chart SQL Script">3D Bubble Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Bubble-Chart-SQL-Script.html" title=
+"2D Bubble Chart SQL Script">2D Bubble Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 5px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Combination-Charts.html" title=
+"Combination Charts">Combination Charts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 15px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Combination-Chart-SQL-Scripts.html" title=
+"Combination Chart SQL Scripts">Combination Chart SQL
+Scripts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Bar-Area-Combination-Chart-SQL-Script.html" title=
+"3D Bar-Area Combination Chart SQL Script">3D Bar-Area Combination
+Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Bar-Line-Combination-Chart-SQL-Script.html" title=
+"3D Bar-Line Combination Chart SQL Script">3D Bar-Line Combination
+Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Bar-Area-Combination-Chart-SQL-Script.html" title=
+"2D Bar-Area Combination Chart SQL Script">2D Bar-Area Combination
+Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Bar-Line-Combination-Chart-SQL-Script.html" title=
+"2D Bar-Line Combination Chart SQL Script">2D Bar-Line Combination
+Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 5px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Financial-Charts.html" title="Financial Charts">Financial
+Charts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 15px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Financial-Chart-SQL-Scripts.html" title=
+"Financial Chart SQL Scripts">Financial Chart SQL Scripts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-High-Low-Close-Chart-SQL-Script.html" title=
+"3D High Low Close Chart SQL Script">3D High Low Close Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Candlestick-Chart-SQL-Script.html" title=
+"3D Candlestick Chart SQL Script">3D Candlestick Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-High-Low-Close-Chart-SQL-Script.html" title=
+"2D High Low Close Chart SQL Script">2D High Low Close Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Candlestick-Chart-SQL-Script.html" title=
+"2D Candlestick Chart SQL Script">2D Candlestick Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 5px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Line-Charts.html" title="Line Charts">Line Charts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 15px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Line-Chart-SQL-Scripts.html" title=
+"Line Chart SQL Scripts">Line Chart SQL Scripts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Multiple-Series-Line-Chart-SQL-Script.html" title=
+"3D Multiple Series Line Chart SQL Script">3D Multiple Series Line
+Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Stacked-Line-Chart-SQL-Script.html" title=
+"3D Stacked Line Chart SQL Script">3D Stacked Line Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-XY-Line-Zero-Axis-Chart-SQL-Script.html" title=
+"3D XY Line Zero Axis Chart SQL Script">3D XY Line Zero Axis Chart
+SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Multiple-Series-Line-Chart-SQL-Script.html" title=
+"2D Multiple Series Line Chart SQL Script">2D Multiple Series Line
+Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Stacked-Line-Chart-SQL-Script.html" title=
+"2D Stacked Line Chart SQL Script">2D Stacked Line Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-XY-Line-Zero-Axis-Chart-SQL-Script.html" title=
+"2D XY Line Zero Axis Chart SQL Script">2D XY Line Zero Axis Chart
+SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 5px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Pie-Charts.html" title="Pie Charts">Pie Charts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 15px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Pie-Chart-SQL-Scripts.html" title=
+"Pie Chart SQL Scripts">Pie Chart SQL Scripts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Pie-Chart-SQL-Script.html" title=
+"3D Pie Chart SQL Script">3D Pie Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Exploding-Pie-Chart-SQL-Script.html" title=
+"3D Exploding Pie Chart SQL Script">3D Exploding Pie Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Multiple-Series-Pie-Chart-SQL-Script.html" title=
+"3D Multiple Series Pie Chart SQL Script">3D Multiple Series Pie
+Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Pie-Chart-SQL-Script.html" title=
+"2D Pie Chart SQL Script">2D Pie Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Exploding-Pie-Chart-SQL-Script.html" title=
+"2D Exploding Pie Chart SQL Script">2D Exploding Pie Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Multiple-Series-Pie-Chart-SQL-Script.html" title=
+"2D Multiple Series Pie Chart SQL Script">2D Multiple Series Pie
+Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 5px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Scatter-Charts.html" title="Scatter Charts">Scatter
+Charts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 15px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Scatter-Chart-SQL-Scripts.html" title=
+"Scatter Chart SQL Scripts">Scatter Chart SQL Scripts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Scatter-Chart-SQL-Script.html" title=
+"3D Scatter Chart SQL Script">3D Scatter Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Linear-Regression-Chart-SQL-Script.html" title=
+"3D Linear Regression Chart SQL Script">3D Linear Regression Chart
+SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Zero-Crossing-Chart-SQL-Script.html" title=
+"3D Zero Crossing Chart SQL Script">3D Zero Crossing Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Scatter-Chart-SQL-Script.html" title=
+"2D Scatter Chart SQL Script">2D Scatter Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Linear-Regression-Chart-SQL-Script.html" title=
+"2D Linear Regression Chart SQL Script">2D Linear Regression Chart
+SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Zero-Crossing-Chart-SQL-Script.html" title=
+"2D Zero Crossing Chart SQL Script">2D Zero Crossing Chart SQL
+Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 5px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Surface-Charts.html" title="Surface Charts">Surface
+Charts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 15px;">
+<div style="display: inline-block; width: 10px;"><img src=
+"images/table_sortdescending.png"></div>
+
+<a href="Surface-Chart-SQL-Scripts.html" title=
+"Surface Chart SQL Scripts">Surface Chart SQL Scripts</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="3D-Surface-Chart-SQL-Script.html" title=
+"3D Surface Chart SQL Script">3D Surface Chart SQL Script</a><br>
+</div>
+
+<div class="nowrap" style="padding-left: 25px;">
+<div style="display: inline-block; width: 10px;">&nbsp;</div>
+
+<a href="2D-Surface-Chart-SQL-Script.html" title=
+"2D Surface Chart SQL Script">2D Surface Chart SQL Script</a><br>
+</div>
+
+</div>
+</td>
+<td width="80%" valign="top" style=
+"vertical-align:top; margin:0; padding-left:10px;padding-right:7px;">
+<div class="wiki-header">
+<h1 style="margin-top:0; margin-bottom:7px">2D Surface Chart SQL
+Script</h1>
+</div>
+
+<div class="page-source user-content">
+<p><span style=
+"font-family: Monospaced;color: rgb(102,102,102);font-size: small;">
+<em>--------------------------------------------------------------------------------------------------------</em></span><span
+ style=
+"font-family: Monospaced;color: rgb(102,102,102);font-size: small;">
+<em>-----------------------------------------------------</em></span><br>
+
+ <span style=
+"font-family: Monospaced;color: rgb(102,102,102);font-size: small;">
+<em>-- 2D Surface Chart</em></span><br>
+ <span style=
+"font-family: Monospaced;color: rgb(102,102,102);font-size: small;">
+<em>--<br>
+ --&nbsp;&nbsp; Notes: The query below will work on the following
+database servers:<br>
+ --&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MS SQL
+Server, Sybase ASE, Sybase IQ, Sybase Anywhere, MySQL,
+PostreSQL<br>
+ --<br>
+ --&nbsp;&nbsp; ORACLE: To make the query below work in Oracle, add
+" FROM DUAL" at the end of each
+SELECT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+ --&nbsp;&nbsp; DB2: To make the query below work in DB2, add "
+FROM SYSIBM.SYSDUMMY1" at the end of each SELECT<br>
+ --------------------------------------------------------------------------------------------------------</em></span><span
+ style=
+"font-family: Monospaced;color: rgb(102,102,102);font-size: small;">
+<em>-----------------------------------------------------</em></span></p>
+
+<p><span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+select</strong></span> <span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">1</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">category,</span>
+<span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">25</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">s1,</span>
+<span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">45</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">s2</span><br>
+
+ <span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+union</strong></span><br>
+ <span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+select</strong></span> <span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">2</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">category,</span>
+<span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">10</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">s1,
+-</span><span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">25</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">s2</span><br>
+
+ <span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+union</strong></span><br>
+ <span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+select</strong></span> <span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">3</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">category,</span>
+<span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">40</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">s1,
+-</span><span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">5</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">s2</span><br>
+
+ <span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+union</strong></span><br>
+ <span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+select</strong></span> <span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">4</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">category,</span>
+<span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">70</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">s1,</span>
+<span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">15</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">s2</span><br>
+
+ <span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+union</strong></span><br>
+ <span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+select</strong></span> <span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">5</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">category,</span>
+<span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">65</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">s1,</span>
+<span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">50</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">s2</span><br>
+
+ <span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+union</strong></span><br>
+ <span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+select</strong></span> <span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">6</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">category,</span>
+<span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">40</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">s1,
+-</span><span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">25</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">s2</span><br>
+
+ <span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+union</strong></span><br>
+ <span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+select</strong></span> <span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">7</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">category,</span>
+<span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">33</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">s1,</span>
+<span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">23</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">s2</span><br>
+
+ <span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+union</strong></span><br>
+ <span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+select</strong></span> <span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">8</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">category,</span>
+<span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">95</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">s1,</span>
+<span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">4</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">s2</span><br>
+
+ <span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+union</strong></span><br>
+ <span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+select</strong></span> <span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">9</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">category,</span>
+<span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">10</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">s1,</span>
+<span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">12</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">s2</span><br>
+
+ <span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+union</strong></span><br>
+ <span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+select</strong></span> <span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">10</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">category,</span>
+<span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">70</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">s1,</span>
+<span style=
+"font-family: serif;color: rgb(255,0,255);font-size: small;">55</span>
+<span style=
+"font-family: Monospaced;color: rgb(0,0,255);font-size: small;"><strong>
+as</strong></span> <span style=
+"font-family: serif;color: rgb(153,51,0);font-size: small;">s2</span><br>
+
+ <span style=
+"font-family: Monospaced;color: rgb(70,177,59);font-size: small;"><strong>
+GO</strong></span><br>
+ <span style=
+"font-family: serif;color: rgb(0,102,204);font-size: small;">.setResultSettings</span>
+<span style=
+"font-family: serif;color: rgb(255,0,0);font-size: small;">'Index=1,<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CategoryFields="[category]
+ASC",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SeriesFields="[s1],[s2]",<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowChart=true,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowToolbar=true,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Paging=true,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Split=0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chart="{surface,surface}",<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RotX=324,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RotY=0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RotZ=0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ZoomScalar=1.2025924,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowLegend=true,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowLegendBorder=true,<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowGrid=true,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FillGrid=true,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GridLineWidth=1.0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Title="2D Surface
+Chart",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TitlePosition="Bottom
+Center",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TitleCategory="",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TitleValue="",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PieExplode=0.0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GroupSmallValues=true,<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SmallValuesThreshold=3.0,<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PieLabelDistance=3.0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PieShowLines=false,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LineWidth=1.0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowMarkers=true,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MapShowBackground=false,<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MapShowDetails=false,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MapRange="",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MapRangeColors="",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Width=16.0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Height=10.0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Depth=6.0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SeriesSpacing=1.0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CategorySpacing=1.0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Font=Arial-6,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LegendFontSize=1.0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SeriesFontSize=1.0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CategoryFontSize=1.0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ValueFontSize=1.0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TitleFontSize=1.75,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AxisTitleFontSize=1.25,<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DataLabelFontSize=1.0,<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TopColor=#D7DCF5,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BottomColor=#EBF0F5,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PanX=-293.5,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PanY=-160.7,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lighting=Bright,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Opacity=1.0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View2D=true,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FitChartToImage=false,<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StackedPercent=false,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowValueAxis=true,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowValueAxisTicks=true,<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowValueAxisLines=true,<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ReverseValueAxis=false,<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowCategoryAxis=true,<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowCategoryAxisTicks=true,<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowCategoryAxisLines=true,<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowSeriesAxis=false,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowDataLabels=false,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ValueAxisNumberFormat="###0",<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CategoryAxisNumberFormat="#,##0",<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CategoryAxisDateFormat="",<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CategoryAxisDateTimeFormat="",<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CategoryAxisTimeFormat="",<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SeriesAxisNumberFormat="",<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SeriesAxisDateFormat="",<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SeriesAxisDateTimeFormat="",<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SeriesAxisTimeFormat="",<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NumericCategoryAxis=false,<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MergeAxis=true,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SeriesAlias="default,default",<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SeriesSubType=",",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SeriesColumnType="Cube,Cube",<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SeriesMin="default,default",<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SeriesMax="default,default",<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SeriesColor="#3366ff,#993300",<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SeriesFunctionMetaData="true,true",<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowSeriesDataLabels="false,false",<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LegendPosition=Top
+Right,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LegendWidthType=Exact,<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LegendWidth=100,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LegendHeightType=Fit,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LegendHeight=160,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowFixedCategoryCount=true,<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FixedCategoryCount=0'</span></p>
+</div>
+</td>
+</tr>
+</table>
+
+
+
+<iframe src="footer.html" frameborder="0" scrolling="no" height=
+"100px" width="100%">ddd</iframe>
+
+<!--End Footer-->
+
+
+
+
+</div>
+</body>
+</html>
+

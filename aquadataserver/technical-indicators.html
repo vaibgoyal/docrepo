@@ -1,0 +1,561 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Technical Analysis Solutions Examples - Technical Indicators | AquaFold</title>
+    <meta name="description" content="Example project for building Technical Indicators for publically traded securities with Aqua Data Server - MACD, RSI, OBV, DPO, Stochastic Oscillator">
+    <meta name="keywords" content=" technical indicators api, custom technical indicators, technical indicators charts, technical indicators examples, aqua data server examples, aquascript examples">
+    <meta name="robots" content="noodp,noydir" />
+    <link rel="SHORTCUT ICON" href="http://www.aquafold.com/favicon.ico">
+    <link rel='stylesheet' href='../style/bootstrap/css/bootstrap.css'>    
+    <link rel='stylesheet' href='../style/lightbox.css'>
+    <style type="text/css">
+<!--
+.style12 {font-size: 16px}
+-->
+
+
+</style>
+<script type="text/javascript">
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-3163490-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>	
+<body>
+<div class="container">
+<!-- Navbar
+================================================== -->
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="brand" href="http://www.aquafold.com/" >
+				<img src="../images/aquafold_logo_blue_bubbles.png" alt="AquaFold, Inc." title="AquaFold, Inc." />
+			</a>
+			<div class="nav-collapse" >
+				<ul class="nav">
+					<li class="">
+						<a href="../aquadatastudio.html">Aqua Data Studio</a>
+					</li>
+					<li class="active">
+						<a href="../aquadataserver.html">Aqua Data Server</a>
+					</li>
+					<li class="">
+						<a href="../aquaclusters.html">AquaClusters</a>
+					</li>
+				</ul>
+				<ul class="nav pull-right">
+					<li>
+						<a href="../support.html">Support</a>
+					</li>
+					<li>
+						<a href="../store.html">Buy</a>
+					</li>
+					<li>
+						<a href="../company.html" class="company">Company</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Subnav
+================================================== -->
+<div class="subnav">
+	<ul class="nav nav-pills">
+		<li>
+			<a href="../aquadataserver.html">Overview </a>
+		</li>
+		<li>
+			<a href="../aquadataserver_whats_new.html">What&#8217;s New</a>
+		</li>
+		<li>
+			<a href="../aquadataserver_features.html">Features &amp; Screenshots</a>
+		</li>
+		<li>
+			<a href="../aquadataserver_documentation.html">Documentation</a>
+		</li>
+
+		<li>
+			<a href="../aquadataserver_downloads.html">Download</a>
+		</li>
+		<li>
+			<a href="../store.html">Buy</a>
+		</li>
+		
+        <li>
+			<img src="../images/aquadataserver_logo_gray_no_bubbles.png" style="position:relative;left:179px;top:13px;">
+</li>
+  </ul>
+</div>
+<br clear="all" /> 
+
+<h3>Technical Indicators &ndash; Aqua Data Server Solution Examples</h3>
+You can download project source code from:<br/>
+<a href="http://www.aquafold.com/download/v17.0.0/solutions/MathSolutions.zip"> http://www.aquafold.com/download/v17.0.0/solutions/MathSolutions.zip<br/></a>
+</a>Updated: Jan-29-2011
+</p>
+<h3 class="underlined">Charts Implemented in this Project</h3>
+<ul>
+<li><a href="#candelstick">Candlestick Plot </a> 
+<li><a href="#macd">Moving Average Convergence-Divergence (MACD) </a></li>
+<li><a href="#rsi">Relative Strength Index (RSI) </a></li>
+<li><a href="#stosc">Stochastic Oscillator</a></li>
+<li><a href="#obv">On Balance Volume (OBV)</a></li>
+<li><a href="#dpo">Detrended Price Oscillator (DPO)</a></li>
+</ul>
+</p>
+
+<h3 class="underlined">Introduction. Technical Indicators and Overlays.</h3>
+<p>
+A technical indicator is a series of data points that are derived by applying a formula to the price data of a security. 
+Price data includes any combination of the open, high, low or close over a period of time. 
+Some indicators may use only the closing prices, while others incorporate volume and open interest into their formulas.
+ The price data is entered into the formula and a data point is produced.
+<br/><br/>
+Indicators that use the same scale as prices of the security are typically plotted on top of the price bars and are therefore referred to as "Overlays."
+<br/><br/>
+AquaOpen API has financial methods that are useful in modeling price behavior. Some financial indicators shown in this example are implemented
+ in a single API method and can be invoked in one line of code, others require calling several API methods. The AquaScript environment 
+available to the user can be a valuable asset in constructing custom financial tools.
+
+
+
+
+
+
+
+<h3 class="underlined">Inputs: Stock and Pricing Data</h3>
+<p>
+In order to illustrate some of the features of aqua.math.financial, we will be using standard pricing data. Specifically, the High, Low, Close, Open, Volume, and Adjusted Close of the Dow Index daily values for 2010.
+Stock data for this example is taken from a stockdata.csv file included in the project. The file in turn was created by downloading data from one of publicly available sources such as http://finance.yahoo.com/
+<br/><br/>
+<div style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;margin-bottom:20px; background-color: rgb(238, 238, 238); border: 1px dotted black; font-family: courier new,courier;">
+<br/>
+var high= new Array();<br/>
+var low= new Array();<br/>
+var close= new Array();<br/>
+var open= new Array();<br/>
+var volume = new Array();<br/>
+var date = new Array();</p>
+//csv import <br/><br/>
+var TextFile = "C:/Aqua10-0 Workspace/share/aqua-projects/Solution Examples/Math Solutions/User Files/stockdata2.csv";<br/><br/>
+
+var reader = aqua.io.newTextReader();<br/><br/>
+reader.setFile(TextFile);<br/>
+reader.setFirstLineContainsColumnNames(true);<br/>
+reader.setCellDelimiter(",");<br/><br/>
+
+var dataSet = aqua.data.newDataSet();<br/><br/>
+
+
+dataSet.importData(reader);<br/><br/>
+
+dataSet.sort("Date",true);<br/>
+aqua.console.println(dataSet.getValueAt(0,1))<br/><br/>
+
+N=dataSet.getRowCount();<br/>
+for(i=0;i<N;i++){<br/><br/>
+
+date[i]=dataSet.getValueAt(i,0);<br/><br/>
+open[i]=parseFloat(dataSet.getValueAt(i,1));<br/>
+high[i]=parseFloat(dataSet.getValueAt(i,2));<br/>
+low[i]=parseFloat(dataSet.getValueAt(i,3));<br/>
+close[i]=parseFloat(dataSet.getValueAt(i,4));<br/>
+volume[i]=parseFloat(dataSet.getValueAt(i,5));<br/>
+}           
+<br/><br/>
+</div>
+
+
+
+
+
+<h3 class="underlined" id="candelstick" style="padding-top:62px;">CandleStick Plot</h3>
+<p>
+One of the most common ways to view pricing data is via candlestick plot. This chart has two components, 
+the body (range of open to close price) and the wick (range of high to low price) and illustrates the difference between these two ranges. 
+<br/><br/>
+Read More: <a href="http://en.wikipedia.org/wiki/Candlestick_chart"> http://en.wikipedia.org/wiki/Candlestick_chart</a>
+</p>
+<h3 class="underlined">Implementation:</h3>
+<p>
+This chart type is available in the Aqua Open API charting toolset.</p>
+ <div style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;margin-bottom:20px; background-color: rgb(238, 238, 238); border: 1px dotted black; font-family: courier new,courier;"> 
+<br/>
+chart.getProperties().setChartTypeCandleStick(); 
+<br/><br/>
+</div>   
+
+
+
+
+<a href="diagrams/candlestick plot.png"><img src="diagrams/candlestick plot.png" alt="CandleStick Plot" title="CandleStick Plot" border="0" style="margin-bottom:20px;" /></a>
+
+</p>
+
+
+
+
+
+
+<h3 class="underlined" id="macd" style="padding-top:62px;">Moving Average Convergence-Divergence (MACD)</h3>
+<p>
+Standard MACD is the 12-day Exponential Moving Average (EMA) less the 26-day EMA. Closing prices are used for these moving averages. 
+A 9-day EMA of MACD is plotted alongside to act as a signal line to identify turns in the indicator. 
+The MACD-Histogram represents the difference between MACD and its 9-day EMA, the signal line. 
+The histogram is positive when MACD is above its 9-day EMA and negative when MACD is below its 9-day EMA.
+<br/><br/>
+As its name implies, MACD is all about the convergence and divergence of the two moving averages. 
+Convergence occurs when the moving averages move towards each other. Divergence occurs when the moving averages move away from each other.
+ The shorter moving average (12-day) is faster and responsible for most MACD movement. The longer moving average (26-day) is slower and less reactive to price changes in the underlying security. 
+<br/><br/>
+MACD oscillates above and below the zero line, which is also known as the centerline. 
+These crossovers signal that the 12-day EMA has crossed the 26-day EMA. The direction, of course, depends on direction 
+of the moving average cross. Positive MACD indicates that the 12-day EMA is above the 26-day EMA. Positive values 
+increase as the shorter EMA diverges further from the longer EMA. This means upside momentum is increasing. 
+Negative MACD indicates that the 12-day EMA is below the 26-day EMA. Negative values increase as the shorter 
+EMA diverges further below the longer EMA. This means downside momentum is increasing. 
+
+<br/><br/>
+Read More: <a href="http://en.wikipedia.org/wiki/MACD"> http://en.wikipedia.org/wiki/MACD</a>
+</p>
+<h3 class="underlined">Implementation:</h3>
+<p>
+Moving Averages functions are available in the Aqua Open API "math" package.</br></br>
+
+The aqua.math.financial.macd method returns both the MACD and its signal line. The difference between these two is often plotted as the MACD Histogram.
+</p>
+<div style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;margin-bottom:20px; background-color: rgb(238, 238, 238); border: 1px dotted black; font-family: courier new,courier;">
+<br/>
+    md = aqua.math.financial.macd(close,12,21,9); // calculate moving average convergence/divergence
+<br/><br/>
+    //md[][0] = macd
+<br/><br/>
+    //md[][1] = signal line
+<br/><br/>
+</div>
+    
+<p/>
+
+<a href="diagrams/macd.png"><img src="diagrams/macd.png" alt="MACD" title="MACD" border="0" style="margin-bottom:20px;" /></a>
+
+</p>
+
+
+
+
+
+
+<h3 class="underlined" id="rsi" style="padding-top:62px;">Relative Strength Index (RSI)</h3>
+<p>
+Relative Strength Index (RSI) is a momentum oscillator that measures the speed and change of price movements relative to the previous price. 
+RSI oscillates between zero and 100. Traditionally, if RSI is above 70 the stock considered as overbought and when RSI is below 30 the stock is oversold. 
+RSI is normalized (to be between 0 and 100) Relative Strength (RS), where RS is the ratio of Average Gain to Average Loss over a period of time.
+<br/><br/>
+The very first calculations for average gain and average loss are simple 14 period averages. 
+<br/><br/>
+•	First Average Gain = Sum of Gains over the past 14 periods / 14. 
+<br/><br/>
+•	First Average Loss = Sum of Losses over the past 14 periods / 14
+<br/><br/>
+The second, and subsequent, calculations are based on the prior averages and the current gain loss: 
+<br/><br/>
+•	Average Gain = [(previous Average Gain) x 13 + current Gain] / 14. 
+<br/><br/>
+•	Average Loss = [(previous Average Loss) x 13 + current Loss] / 14. 
+
+<br/><br/>
+<!--Read More: <a href="http://en.wikipedia.org/wiki/Moving_average"> http://en.wikipedia.org/wiki/Moving_average</a> -->
+
+<h3 class="underlined">Implementation:</h3>
+<p>
+We can also construct RSI using Aqua Open API functions.</br></br>
+
+<div style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;margin-bottom:20px; background-color: rgb(238, 238, 238); border: 1px dotted black; font-family: courier new,courier;"> 
+<br/>
+    relsi=aqua.math.financial.rsi(close,9); // calculate relative strength index over period of 9 days
+<br/><br/>
+    if (temp>=70)
+<br/><br/>
+     {
+<br/><br/>
+    model.setValue(2,i,10);  //if rsi over 70, set alert for overbought
+<br/><br/>
+    model.setValue(1,i,NaN);
+<br/><br/>
+    }
+<br/><br/>
+    if (temp<=30)
+<br/><br/>
+     {
+<br/><br/>
+    model.setValue(1,i,10);  //if rsi under 30, set alert for oversold
+<br/><br/>
+    model.setValue(2,i,NaN);
+<br/><br/>
+    }
+<br/><br/>
+</div>   
+
+
+
+<a href="diagrams/rsi.png"><img src="diagrams/rsi.png" alt="RSI" title="RSI" border="0" style="margin-bottom:20px;" /></a>
+
+</p>
+
+
+
+
+
+
+
+<h3 class="underlined" id="stosc" style="padding-top:62px;">Stochastic Oscillator</h3>
+<p>
+The Stochastic Oscillator is a momentum indicator that, according to its inventor 'doesn't follow price, 
+it doesn't follow volume or anything like that. It follows the speed or the momentum of price. It is also used to identify overbought and oversold levels. 
+As a rule, the momentum changes direction before price. As such, bullish and bearish divergences in the Stochastic Oscillator can be used to foreshadow reversals.
+<br/><br/>
+Stochastic Oscillator %K = (Current Close - Lowest Low)/(Highest High - Lowest Low) * 100
+<br/><br/>
+%D = 3-day Simple Moving Average of %K
+<br/><br/>
+The default setting for the Stochastic Oscillator is 14 periods, which can be days, weeks, months or an intraday timeframe.
+
+<br/><br/>
+Read More: <a href="http://en.wikipedia.org/wiki/Stochastic_oscillator"> http://en.wikipedia.org/wiki/Stochastic_oscillator</a>
+</p>
+<h3 class="underlined">Implementation:</h3>
+<p>
+Stochastic Oscillator method is  available in the Aqua Open API "math" package.</p>
+ The stochastic oscilator method returns two quantities. %K is how near the period low a closing value of a stock is, 
+scaled by the period's range (highest high-lowest low). %D is the exponential moving average of %K. 
+The are three versions of this method available in aqua.math.financial: The fast, slow, and the general oscillators. 
+They differ on the windows used for the exponential moving averages. The fast oscillator, for example, obtains %D by 
+smoothing %K with a 3 period window. The slow smooths both %K and %D with 3 period windows. 
+The general oscillator allows the user to assign an arbitrary window length for smoothing.    
+
+<div style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;margin-bottom:20px; background-color: rgb(238, 238, 238); border: 1px dotted black; font-family: courier new,courier;">
+<br/>
+sto=aqua.math.financial.stochosc(high,low,close,15,9);  // calculate %K and %D over 15 days, smoothing with a 9 day exponential moving average
+<br/><br/>
+</div>
+
+
+
+
+<a href="diagrams/stochastic%20oscillator.png"><img src="diagrams/stochastic%20oscillator.png" alt="Stochastic Oscillator" title="Stochastic Oscillator" border="0" style="margin-bottom:20px;" /></a>
+
+</p>
+
+
+
+
+
+
+<h3 class="underlined" id="obv" style="padding-top:62px;">On Balance Volume (OBV)</h3>
+<p>
+On Balance Volume (OBV) measures buying and selling pressure as a cumulative indicator that adds volume on up days and subtracts volume on down days. It is a volume accumulator, 
+adding volume if the stock closes up and subtracting if it closes down. Analysts can look for divergences between OBV and price to predict price movements or use OBV to confirm price trends.
+The On Balance Volume (OBV) line a running total of positive and negative volume. 
+A period's volume is positive when the close is above the prior close. A period's volume is negative when the close is below the prior close.
+        <br/><br/>       
+If the closing price is above the prior close price then: 
+Current OBV = Yesterday's OBV + Current Volume
+<br/><br/>
+If the closing price is below the prior close price then: 
+Current OBV = Yesterday's OBV  -  Current Volume
+<br/><br/>
+If the closing prices equals yesterday's closing price then:
+Current OBV = Yesterday's OBV (no change)
+
+<br/><br/>
+Read More: <a href="http://en.wikipedia.org/wiki/On_balance_volume"> http://en.wikipedia.org/wiki/On_balance_volume</a>
+</p>
+<h3 class="underlined">Implementation:</h3>
+<p>
+On Balance Volume method is  available in the Aqua Open API "math" package.</p>
+ We can use the obv calculation to script a volume / obv chart that indicates whether the stock closed up or down.  
+</p>
+<div style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;margin-bottom:20px; background-color: rgb(238, 238, 238); border: 1px dotted black; font-family: courier new,courier;">
+<br/>
+    onbv = aqua.math.financial.obv(close,volume);  // calculate on balance volume
+<br/><br/>
+    prc = aqua.math.financial.proc(onbv);  // calculate rate of change of on balance volume (to decide color of volume histogram)
+<br/><br/>
+    for(i=0;i<100;i++){
+<br/><br/>
+    k=i+21
+<br/><br/>
+    model3.addCategory(date[k]);
+<br/><br/>
+    //obv volume chart
+<br/><br/>
+    temp = aqua.math.signum(prc[k]);  //determine direction of obv slope
+<br/><br/>
+    if (temp>=0) 
+<br/><br/>
+     {
+<br/><br/>
+    model3.setValue(0,i,volume[k]/1e6); //if positive, volume series to green
+<br/><br/>
+    model3.setValue(1,i,NaN);
+<br/><br/>
+    } else {
+<br/><br/>
+    model3.setValue(1,i,volume[k]/1e6); //if negative, volume series to red
+<br/><br/>
+    model3.setValue(0,i,NaN);
+<br/><br/>
+    }
+<br/><br/>
+</div>
+
+
+
+
+<a href="diagrams/obv.png"><img src="diagrams/obv.png" alt="On Balance Volume" title="On Balance Volume" border="0" style="margin-bottom:20px;" /></a>
+
+</p>
+
+
+
+<h3 class="underlined"> Custom Indicators </h3>
+<p>
+The previous indicators are already available in aqua.math.financial, but users can use the scripting environment to construct custom ones. We will construct the Detrended Price Oscillator.
+<br/><br/>
+
+
+
+
+
+
+
+<h3 class="underlined" id="dpo" style="padding-top:62px;">Detrended Price Oscillator (DPO)</h3>
+<p>
+The Detrended Price Oscillator (DPO) is an indicator designed to remove trend from price and make it easier to identify cycles. 
+It measures the difference between a past price and a moving average. DPO does not extend to the last date because it is based on a displaced moving average.
+ However, alignment with the most recent is not an issue because DPO is not a momentum oscillator. 
+Instead, DPO is used to identify cycles highs/lows and estimate cycle length.
+<br/><br/>
+Price {X/2 + 1} periods ago less the X-period simple moving average.
+<br/><br/>
+X refers to the number of periods used to calculate the Detrended Price 
+Oscillator. A 20-day DPO would use a 20-day SMA that is displaced by 11 
+periods {20/2 + 1 = 11}. This displacement shifts the 20-day SMA 11 days 
+to the left, which actually puts it in the middle of the look-back 
+period. The value of the 20-day SMA is then subtracted from the price 
+in the middle of this look-back period. In short, DPO(20) equals price
+11 days ago less the 20-day SMA.  
+
+
+
+<br/><br/>
+Read More: <a href="http://en.wikipedia.org/wiki/Detrended_price_oscillator"> http://en.wikipedia.org/wiki/Detrended_price_oscillator</a>
+</p>
+<h3 class="underlined">Implementation:</h3>
+<p>
+There is no  Detrended Price Oscillator function in the Aqua Open API. We need to make a few calculations using available API methods to create it.</p>
+   The detrended price oscillator is the difference between the price and its 20-day exponential moving average.
+ Since the moving average is a trend identifier, we can remove the overall trend (detrending) and study the price's
+ movement around the trend. For this oscillator, we only need the exponential moving average.
+<br/><br/>
+ 
+
+<div style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;margin-bottom:20px; background-color: rgb(238, 238, 238); border: 1px dotted black; font-family: courier new,courier;"> 
+<br/>
+ema20=aqua.math.financial.ema(close,20); //calculate the 20-day exponential moving average
+<br/><br/>
+var detrendOsc=new Array();
+<br/><br/>
+for(i=0;i < close.length;i++){
+<br/><br/>
+detrendOsc[i]=ema20[i]-close[i];
+<br/><br/>
+
+</div>   
+
+
+<br/><br/>
+
+
+
+
+<a href="diagrams/detrended price oscillator1.png"><img src="diagrams/detrended price oscillator1.png" alt="Detrended Price Oscillator" title="Detrended Price Oscillator" border="0" style="margin-bottom:20px;" /></a>
+<br/><br/>
+<a href="diagrams/detrended price oscillator2.png"><img src="diagrams/detrended price oscillator2.png" alt="Detrended Price Oscillator" title="Detrended Price Oscillator" border="0" style="margin-bottom:20px;" /></a>
+</p>
+
+
+
+
+
+<!-- New paragraph
+
+-----
+<h3 class="underlined">Introduction. Technical Indicators and Overlays.</h3>
+<p>
+
+
+
+
+-->
+
+
+
+
+<!--Start Footer-->
+<div class="copyfooter">
+	<p style="float:left;padding-left:0px">
+		<a href="../index.html">
+		Home
+		</a>
+		&#149;
+		<a href="../aquadatastudio.html">
+		Aqua Data Studio
+		</a>
+		&#149;
+		<a href="../aquadataserver.html">
+		Aqua Data Server
+		</a>
+		&#149;                    
+		<a href="../aquaclusters.html">
+		AquaClusters
+		</a>
+		&#149;   
+		<a href="../support.html">
+		Support
+		</a>
+		&#149;
+		<a href="../store.html">
+		Buy
+		</a>
+
+		&#149;
+		<a href="../company.html">
+		Company
+		</a>
+		&#149;
+		<a href="http://www.aquafold.com/privacy.html">
+		Privacy
+		</a>
+	</p>
+	<p style="display:block;float:right;text-align:right;padding-right:0px;">
+	Copyright &copy; 2001&ndash;2016 AquaFold, Inc. All Rights Reserved.
+	</p>
+</div>
+<br />
+<!--End Footer-->
+
+</div>
+</body>
+</html>
